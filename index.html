@@ -29,11 +29,20 @@
       <!-- xxx 2nd row, new navbar (as required by rubric) xxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
       <nav class='navbar'>
+        <div class='title-container'>
+          <h4>Quick Navigation</h4>
+        </div>
+
         <div class='navbar-button-container'>
-          <a href='./blog-entries/2021-01-05-blog-entry.html' class='button navbar-button'>First Blog<span class='show-when-wide'> Entry</span></a>
-          <a href='./blog-entries/2021-01-14-blog-entry.html' class='button navbar-button'>Last Blog<span class='show-when-wide'> Entry</span></a>
-          <a href='./subscribe.html' class='navbar-spacer'></a>
-          <a href='./subscribe.html' class='button navbar-button'>Subscribe</a>
+          <a href='#2021-01-14' class='button navbar-button'>14/01/2021</a>
+          <a href='#2021-01-13' class='button navbar-button'>13/01/2021</a>
+          <a href='#2021-01-12' class='button navbar-button'>12/01/2021</a>
+          <a href='#2021-01-11' class='button navbar-button'>11/01/2021</a>
+          <a href='#2021-01-10' class='button navbar-button'>10/01/2021</a>
+          <a href='#2021-01-08' class='button navbar-button'>08/01/2021</a>
+          <a href='#2021-01-07' class='button navbar-button'>07/01/2021</a>
+          <a href='#2021-01-06' class='button navbar-button'>06/01/2021</a>
+          <a href='#2021-01-05' class='button navbar-button'>05/01/2021</a>
         </div>
       </nav>
 
@@ -74,141 +83,310 @@
 
   		<section class='blog-index-cards'>
 
-        <div class='sidebar-title-container'>
-    		  <h4>To the posts ...</h4>
+        <div class='title-container'>
+    		  <h4>Blog Posts</h4>
         </div>
 
-        <div class='sidebar-flex-container'>
+        <div class='blog-entries-container'>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-14-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>14/01/21</figcaption>
+            <div id='2021-01-14' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-14-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Tursday 14th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-14-blog-entry.html' class='sidebar-link'>So, today is ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Thursday 14th January 2021</h6></div>
+              <div class='blog-card-content'>
+                <article>
+                  <h4>Learning about GitHub Pages</h4>
+
+                  <p>And just, perhaps, sorting out the banner and adding social media link icons.</p>
+
+                  <p>O.K. let's think about <b>where to put the social media icons</b>; probably in the footer,
+                    maybe using a <u>flexbox with the flow in 'row wrap' mode</u> to keep them looking cool at all
+                  browser widths.</p>
+
+                  <p>And, remember, before you resubmit that this last blogpost page, is the one that will most likely
+                    get checked by the examiner. <b>So, make it good!.</b></p>
+
+                  <p>Which is to say, <b><u>make sure that it matches the project rubric!</u></b></p>
+                </article>
+              </div>
+              <div class='blog-card-date'><h6>Thursday 14th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-13-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>13/01/21</figcaption>
+            <div id='2021-01-13' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-13-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Wednesday 13th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-13-blog-entry.html' class='sidebar-link'>Time for a tidy up ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Wednesday 13th January 2021</h6></div>
+              <div class='blog-card-content'>
+                <article>
+
+                  <h4>@imports, 'alts' and maybe ...</h4>
+
+                  <p> ... it would be handy to have <b>an indication of browser window width</b> just to
+                    see how well layouts and stuff would work on various devices. Javascript would
+                    be one way to do this, but we're not meant to be doing that yet. However, having
+                    used screen width media queries to modify button content yesterday, it occurs
+                    to me the same trick/kludge could be used for screen widths.</p>
+
+                  <p>Of course <u>an ugly way to do it</u> would be to overlay tansparent bordered
+                    rectangles indicating various screen sizes over everything. <b>A bit yuk!</b></p>
+
+                  <p>Other things to clean up:</p>
+
+                  <ol>
+                    <li>Styling of lists!!</li>
+                    <li>'alts' for missing images</li>
+                    <li>The title on the home page, which has gone weird</li>
+                    <Li>css imports and unused commented out bits</Li>
+                    <li>Better handling of css changes between index page and blog pages</li>
+                  </ol>
+
+                  <p><b>Let's go!</b></p>
+                </article>
+              </div>
+              <div class='blog-card-date'><h6>Wednesday 13th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-12-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>12/01/21</figcaption>
+            <div id='2021-01-12' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-12-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Tuesday 12th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-12-blog-entry.html' class='sidebar-link'>Styling a couple of buttons ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Tuesday 12th January 2021</h6></div>
+              <div class='blog-card-content'>
+                <article>
+                  <h4>... and other things as well</h4>
+
+                  <p>It's kind of a <u>left-over from yesterday</u> and there seem to be lots of ways to do navigation
+                    buttons. In the context of this exercise, it should be <b>'pure html'</b> if possible. So, no
+                    Javascript (at this stage) and prefereably without the complication of html forms.</p>
+
+                  <p>And then maybe start to think about putting the <b>navigation into sidebars</b> (i.e. doing
+                    responsive layots) when the display window gets wider.</p>
+                </article>
+              </div>
+              <div class='blog-card-date'><h6>Tuesday 12th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-11-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>11/01/21</figcaption>
+            <div id='2021-01-11' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-11-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Monday 11th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-11-blog-entry.html' class='sidebar-link'>Back to project objectives ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Monday 11th January 2021</h6></div>
+              <div class='blog-card-content'>
+                <article>
+                  <h4>Coming down to Earth.</h4>
+
+                  <p>Apart from adding a bit more <b>content</b>, which is really optional as it could be faked, today
+                    is a day for <b>sorting out the blog entries page:</b></p>
+
+                  <ul>
+                    <li>Navigation ... 'Next', 'Home' and 'Previous' buttons.</li>
+                    <li>Update the layout to match the index page.</li>
+                    <li>Implement the 'responsive' underlining in the footer</li>
+                  </ul>
+
+                  <p>Implementing a 'responsive' switch to putting the navigation in a sidebar is probably <u>a
+                    job for tomorrow</u></p>
+
+                  <p> ... but I do want to revise alignments in flex containers for main and cross axes.</p>
+                </article>
+              </div>
+              <div class='blog-card-date'><h6>Monday 11th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-10-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>10/01/21</figcaption>
+            <div id='2021-01-10' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-10-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Sunday 10th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-10-blog-entry.html' class='sidebar-link'>A weekend political thought ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Sunday 10th January 2021</h6></div>
+              <div class='blog-card-content'>
+                <article>
+                  <h4>Hmm, actually it's really a commercial one ...</h4>
+
+                  <p>Even on this side of the Atlantic, where we have <b>plenty of problems of our own</b> going on, one of the big
+                    news items is Mr. Trump being permanently removed from Twitter. However, for 'technology' I don't think
+                    that is the really big news ...</p>
+                  <p>As everone's thoughts turned to where Mr. Trump might go next for an effective mouthpiece, attention
+                    turned to a lesser known platform called 'Parler'; one with a reputation for being popular among those
+                    with right-wing political views.</p>
+                  <p>Now, there's a bit of conjecture in what follows, as I'm not party to the legal contracts, but if the
+                    mainstream news is accurate, <u>not only is the 'Parler' app being removed from the Apple and Google stores
+                    but Amazon is de-platforming Parler</u></p>
+                  <p>So, here's my assumption. Amazon retain the power to 'de-platform' anyone they don't like. Yes,
+                    certainly, there will have to be a justification for doing so and whether you agree with that or not, in the
+                    case of Parler, is not my point. I'm asking myself, 'How many businesses today (10th January 2021) are
+                    <b><em>totally</em></b> dependent of Amazon for their continuing day-to-day function? And how are they protected
+                    from being 'de-platformed'?</p>
+                  <p>More prescient, perhaps, is the question what might happen if the ownership of Amazon (or the relevant
+                    part of Amazon) changed ownership? These things are allowed in a free marker, capitalist world. If would
+                    business is 'Cloud dependent' how secure is it against such events turning sour?</p>
+                  <p>But that would never happen wth such a significant piece of technology I hear many people cry. What
+                    about ARM? Hugely significant in the world technology stakes, something that might be considered economically
+                    significant for the UK. Effective control sold first to Softbank and, I believe, subsequently to nVidia.
+                    Not that I have any qualms about Softbank or nVidia, my thoughts are simply turning to the fact that you
+                    have no knowledge of, or control over, the future ownership of the critical foundatins of your 'Cloud'
+                    business.</p>
+                  <p>Food for thought, or <b>am I just being techno-paranoid?</b></p>
+                </article>
+              </div>
+              <div class='blog-card-date'><h6>Sunday 10th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-08-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>8/01/21</figcaption>
+            <div id='2021-01-08' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-08-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Friday 8th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-08-blog-entry.html' class='sidebar-link'>Not very inspired Fridays ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Friday 8th January 2021</h6></div>
+              <div class='blog-card-content'>
+                <article>
+                  <h4>Well perhaps just this Friday ...</h4>
+
+                  <p> ... and just on the creative writing front. Well, it is Friday morning, still <b>dark and it's very cold</b> in the U.K.
+                  at the moment.</p>
+
+                  <P>On the blog project front, things are a bit more clear and I do have some objectives.</P>
+
+                  <p>I'm going to make the listing of blog pages on the index page a bit more <u>exiting</u>. At the moment it's just
+                  an unordered list of links ... very old-school html. I'm going to make the section a flex container, containing
+                  other flex containers (or maybe grid containers), each of which will have a small image, a blog page title and
+                  a date. I'm not sure yet which of those will have the hyperlink ... or perhaps the whole container will.
+                  Something for exploration.</p>
+
+                  <p>The other, probably small thing, is to start to play with <u>responisve layouts</u>. I think, initially, I'm just
+                  going to play with those two underlines below the footer. As the page gets wider they could leave more space
+                  between the ends of the underline and the edges of the page. It could use multiple breakpoints so that there's
+                  a less obvious 'pop' if you're resizing a window. Probably not something I'd do in a commercial design (does
+                  it pay for itself?) but something that I think will be good for exploring the technology. Let's see.</p>
+
+                  <p>I'll need to tidy up a few images too.</p>
+
+                  <p>Hmm, I guess this has been a kind of daily stand-up with my team!</p>
+                </article>
+              </div>
+              <div class='blog-card-date'><h6>Friday 8th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-07-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>7/01/21</figcaption>
+            <div id='2021-01-07' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-07-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Thursday 7th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-07-blog-entry.html' class='sidebar-link'>And it's not even a full moon ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Thursday 7th January 2021</h6></div>
+               <div class='blog-card-content'>
+                <article>
+                  <h4>And it's not even a full moon ...</h4>
+
+                  <p>This morning there was a wonderful looking moon in the sky ... not quite a half-moon but more than a crescent. So, I went out in the cold garden to try to get today's blog selfie. These things never look as impressive in a picture as they do to your eyes.</p>
+
+                  <p>Still, being out in the cold for a bit might have given my immune system a beneficial bit of cold shock. I was watching a documentary last night on how to care for your immune system and it seems that a daily bit of cold really does gives you an immunity boost.</p>
+
+                  <p>Which, of course, makes me think <b>how trivial all this (including nanodegrees) is when compared with the raging Covid statistics in the U.K.</b>, the struggles and the bravery of the Health Srvice and also, well, shall I just say ... what's going on in the U.S.A.</p>
+
+                  <p>Still, I should have some <u>objectives for today</u> and they are:</p>
+                  <ul>
+                    <li>Practice with flex elements to centre text in a contianer and investigates how it behaves when you resize.</li>
+                    <li>Use flex to arrange a list of links to multiple blog pages.</li>
+                    <li>Sort out some images to use in these sample pages.</li>
+                    <li>Get some links working between pages, it saves a lot of fiddling about</li>
+                    <li>There's more, I'm sure, that will emerge in the wash.</li>
+                  </ul>
+                </article>
+              </div>
+             <div class='blog-card-date'><h6>Thursday 7th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-06-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>6/01/21</figcaption>
+            <div id='2021-01-06' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-06-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Wednesday 6th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-06-blog-entry.html' class='sidebar-link'>Two things to start today ...</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Wednesday 6th January 2021</h6></div>
+              <div class='blog-card-content'>
+                <article>
+
+                  <h4>Two things to <b>start</b> today ...</h4>
+
+                  <P>So, two new things today ... the first id starting the <b>Udacity Front End Web Developer</b> project ... and the second is that   today I should have been getting my hair cut, from here on in, it's unknown territory: pony tails, bun, braids or just a headband? Mind you a headband might force me back into 1980s style coding and that's definitely <b><em>not</em></b> the objective here.</P>
+
+                  <p>And, talking of objectives, today is the day to rememeber to <u><i>read the question</i></u> or as Udacity are calling it the <i> project rubruc</i>.</p>
+
+                  <p>Let's go!</p>
+                </article>
+              </div>
+              <div class='blog-card-date'><h6>Wednesday 6th January 2021</h6></div>
             </div>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/2021-01-05-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
-                <figcaption>5/01/21</figcaption>
+            <div id='2021-01-05' class='blog-card'>
+              <figure class='blog-card-image'>
+                <img src='./images/index-images/2021-01-05-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>Tuesday 5th</figcaption>
               </figure>
-              <div class='sidebar-choice-card-title'>
+              <div class='blog-card-title'>
                 <a href='./blog-entries/2021-01-05-blog-entry.html' class='sidebar-link'>Lessons done ... now what?</a>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Tuesday 5th January 2021</h6>
-              </div>
-            </div>
+              <div class='blog-card-content'>
+                <article>
+                  <h4>Lessons done ... now what?</h4>
 
-      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                  <p><em>OK ... Lessons done, time to gear up for the project</em></p>
 
-            <div class='sidebar-choice-card'>
-              <figure class='sidebar-choice-card-image'>
-                <img src='./blog-photos/banner-image-ab.jpg' alt='Card Image' class='index-thumbnail'>
-                <figcaption>Very Old</figcaption>
-              </figure>
-              <div class='sidebar-choice-card-title'>
-                <a href='./dummy-social.html' class='sidebar-link'>Social media landing page.</a>
+                  <p>So, this morning I finished the final lesson of <b>Part 2</b> of the course, the 'Creating Responive Layouts' section.
+                    I had a bit of a hiccup with one of the  exercises that didn't seem to work online, so I copied it and pasted it
+                    into 'Sublime' and finished it offline. On reflection, <b>it seems likely that I may have messed it up</b> with some
+                    invalid syntax in the online editing tool. Hmm, maybe it was my fault.</p>
+
+                  <p>Anyway, time to think about the project that goes with this section of the course, so here I am recording a
+                    few thoughts each day that might form the basis for some form of a blog.</p>
+
+                  <p>Oh, and a took a selfie! Given that the U.K. has just gone back into <u>national lockdown</u> and I was due
+                    to get a haircut this week, maybe the progression of Covid hair might provide some images for a blog.</p>
+
+                  <p>It's getting shaggy, but still feeling OK at the moment. I don't think that's going to last though!</p>
+
+                </article>
               </div>
-              <div class='sidebar-choice-card-date'><h6>Dummy link destinations</h6>
+              <div class='blog-card-date'><h6>Tuesday 5th January 2021</h6>
               </div>
             </div>
 

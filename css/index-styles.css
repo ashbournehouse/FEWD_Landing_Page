@@ -7,7 +7,7 @@ but tidy up!! */
 
 @import './common-styles/theme-styles.css';
 @import './common-styles/typography.css';
-@import './index-styles/index-layout'
+@import './index-styles/index-layout.css';
 @import './index-styles/index-images.css';
 @import './index-styles/responsive.css';
 @import './common-styles/devinfo.css';

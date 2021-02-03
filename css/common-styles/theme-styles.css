@@ -167,7 +167,7 @@ figcaption {
 	border-left: 1px solid #000;
 }
 
-.sidebar-title-container {
+.title-container {
 	padding: 1.1em 0 0 1em;
 }
 
@@ -181,44 +181,6 @@ figcaption {
 	border-bottom: 4px solid #333;
 	padding: 0.2em 0 0.2em 0;
 	background: transparent;
-}
-
-.sidebar-choice-card {
-	display: grid;
-  grid-template-columns: 5.6em 4em auto;
-  grid-template-rows: 2.4em 2em;
-  grid-template-areas:
-  'thum titl titl'
-  'thum spac date';
-  background: #336;
-  margin: 4px 10px 4px 10px;
-  border-radius: 2px;
-  width: 29em;
-}
-
-.sidebar-choice-card-image {
-	grid-area: thum;
-	position: relative;
-	/*background: #f0f;*/
-	background: transparent;
-	margin: 0; border: 0 solid #0f0; padding: 0;
-	border-radius: 2px;
-	height: 100%;
-}
-
-.sidebar-choice-card-title {
-	grid-area: titl;
-	background: #336;
-	padding: 4px 8px 4px 8px;
-  border-radius: 2px;
-}
-
-.sidebar-choice-card-date {
-	grid-area: date;
-	background: #336;
-	padding: 4px 8px 4px 8px;
-  border-radius: 2px;
-	text-align: right;
 }
 
 .sidebar-button-container {
