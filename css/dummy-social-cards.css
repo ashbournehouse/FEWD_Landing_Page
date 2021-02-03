@@ -1,0 +1,94 @@
+/***********************************************************************************/
+/* Styles for the 'contact' cards used on the dummy social media destinations page */
+/***********************************************************************************/
+
+.card-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	margin: 20px 0 0 8px;
+}
+
+.card {
+	background-image: url('../../../dummy-social-images/card-background.jpg');
+	background-image: url('./card-background.jpg');
+  width: 20em;
+  height: 14em;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 4.4em 3.6em 1.4em 1.4em 1.4em 1.4em;
+  grid-gap:0px;
+  grid-template-areas:
+  'card-header'
+  'card-name'
+  'card-address-1'
+  'card-address-2'
+  'card-address-3'
+  'card-social-media';
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px;
+}
+
+.card-header {
+	grid-area: card-header;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.card-name {
+	grid-area: card-name;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.card-address-1 {
+	grid-area: card-address-1;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.card-address-2 {
+	grid-area: card-address-2;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.card-address-3 {
+	grid-area: card-address-3;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.card-social-media {
+	grid-area: card-social-media;
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+img.card-thumbnail {
+	display: inline-block;
+	width: 3em;
+	height: auto;
+	border-radius: 2px;
+		/* Style the text for 'alts' */
+	line-height: 14px;
+	font-family: Verdana, Tahoma, Arial, Sans-Serif;
+	font-size: 8px;
+	font-weight: normal;
+	color: #f0f;
+	margin: 2px 8px 2px 8px;
+}

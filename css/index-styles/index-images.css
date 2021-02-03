@@ -18,11 +18,12 @@ img.index-thumbnail {
 	color: #fff;
 }
 
+/*
 img.footer-icon {
 	width: 32px;
 	height: auto;
 	border-radius: 2px;
-		/* Style the text for 'alts' */
+		/* Style the text for 'alts'
 	line-height: 14px;
 	font-family: Verdana, Tahoma, Arial, Sans-Serif;
 	font-size: 8px;
@@ -31,12 +32,15 @@ img.footer-icon {
 	margin: 8px 8px 8px 6px;
 }
 
+*/
+
+/*
 img.card-thumbnail {
 	display: inline-block;
 	width: 3em;
 	height: auto;
 	border-radius: 2px;
-		/* Style the text for 'alts' */
+		/* Style the text for 'alts'
 	line-height: 14px;
 	font-family: Verdana, Tahoma, Arial, Sans-Serif;
 	font-size: 8px;
@@ -44,6 +48,8 @@ img.card-thumbnail {
 	color: #f0f;
 	margin: 2px 8px 2px 8px;
 }
+
+*/
 
 img.avatar {
 	*width: auto;

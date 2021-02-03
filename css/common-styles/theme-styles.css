@@ -95,7 +95,7 @@ figcaption {
 .banner-image{
 	grid-area: imag;
 	background: #f00;
-	background-image: url('../blog-photos/banner-image-ab.jpg');
+	background-image: url('../../images/common-images/banner-image-ab.jpg');
 	background-size: cover;
 	/*height: 146px; width: 172px;
 	height: 100%; width: auto;*/
@@ -286,6 +286,19 @@ figcaption {
 	align-items: center;
 	align-content: space-between;
 	color: red;
+}
+
+.footer-social-icon {
+	width: 32px;
+	height: auto;
+	border-radius: 2px;
+		/* Style the text for 'alts' */
+	line-height: 14px;
+	font-family: Verdana, Tahoma, Arial, Sans-Serif;
+	font-size: 8px;
+	font-weight: normal;
+	color: #f0f;
+	margin: 8px 8px 8px 6px;
 }
 
 .devinfo{
