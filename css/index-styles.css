@@ -1,0 +1,16 @@
+/* Initially use the same files as the blog[age project
+but tidy up!! */
+
+/* Styles (and imports) for the index page */
+
+/* Imports */
+
+@import './common-styles/theme-styles.css';
+@import './common-styles/typography.css';
+@import './index-styles/index-layout'
+@import './index-styles/index-images.css';
+@import './index-styles/responsive.css';
+@import './common-styles/devinfo.css';
+@import './common-styles/mobile.css';
+@import './index-styles/index-mobile.css';
+

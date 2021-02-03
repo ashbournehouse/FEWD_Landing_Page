@@ -1,0 +1,189 @@
+/***************************************************/
+/* Typography styles for all page layouts          */
+/* All the strong themes should be in here         */
+/***************************************************/
+
+
+/**********************************************************/
+/* Set a font size for the body element then adjust       */
+/*  everything else using 'em' units.                     */
+/**********************************************************/
+
+body {
+	font-size: 14px;
+}
+
+/*** Basic Text Styles ***************************************/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
+	color: #ccc;
+	margin: 0;
+	padding: 0.2em 0.2em 1.2em 0.2em;
+}
+
+h1 {font-size: 2.0em; color: #ccc;}
+h2 {font-size: 1.6em; color: #ccc;}
+h3 {font-size: 1.4em; color: #ccc;}
+h4 {font-size: 1.2em; color: #ccc;}
+h5 {font-size: 1.0em; font-weight: bold; color: #ccc;}
+h6 {font-size: 0.9em; font-weight: bold; color: #ccc;}
+
+/*** Keep paragraph and default list styling the same */
+p, li {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	font-family: Palatino, Palatino Linotype, Times, Sans-Serif;
+	color: #ddd;
+	margin: 0; padding: 0.6em 0.6em 0.6em 2em;
+}
+
+blockquote {
+	background-color: #336;
+	font-size: 1.1em;
+	line-height: 1.4em;
+	font-family: Andale Mono, Courier New, monospace;
+	font-weight: normal;
+	color: #fd6;
+	margin: 0.2em 0 0.2em 0;
+	padding: 0.6em 2.6em 0.6em 4em;
+}
+
+b, u {
+	color: #fff;
+}
+
+/*** ... then tweak 'paragraph' spacing for lists */
+ul, ol {
+	margin: 0;
+	border: 0;
+	padding: 0 0.6em 0.6em 4em;
+}
+
+li {
+	padding: 0.2em;
+}
+
+/*** Banner **************************************************/
+h1.banner, h2.banner {
+	margin: 0; border: 0;
+	padding: 0.1em;
+}
+/*** Asides **************************************************/
+p.aside {
+	font-style: italic;
+}
+
+/*** Links ... inline ****************************************/
+a {
+	font-size: 1em;
+	font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
+	color: #ccf;
+	text-decoration: none;
+	margin: 0; border: 0; padding: 0.2em;
+}
+a:hover {color: #ffc;}
+a:visited {color: #aac;}
+a:hover:visited {color: #ffc;}
+
+/*** Links styled as buttons *********************************/
+a.button {
+	height: 100%; width: 7.2em;
+  font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
+	font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  background-color: #663;
+  color: #ccc;
+  margin: 4px 15px 4px 15px;
+  border-top: 2px solid #cca;
+  border-right: 2px solid #996;
+  border-bottom: 2px solid #996;
+  border-left: 2px solid #cca;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+@media(max-width: 500px) {
+	a.button {
+		width: 5.5em;
+	}
+	.hide-when-wide {
+		display: none;
+	}
+}
+
+/*@media(min-width: 800px) {
+	a.button {
+		width: 6.6em;
+	}
+}*/
+
+a.button.navbar-button {
+	width: 10em;
+}
+
+.hidden-button {
+	display: none;
+	height: 4em; width: 7.2em;
+  font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
+	font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  background-color: #663;
+  color: #ccc;
+  margin: 4px 20px 4px 20px;
+  border: none;
+  padding: 0;
+}
+
+@media(min-width:600px) {
+	.hidden-button {
+		display: block;
+		visibility: hidden;
+}
+
+a.button:hover {
+  background-color: #996;
+  color: #666;
+  border-top: 2px solid #663;
+  border-right: 2px solid #cca;
+  border-bottom: 2px solid #cca;
+  border-left: 2px solid #663;
+}
+
+a.button:visited {color: #ccc;}
+a.button:visited:hover {color: #666;}
+
+
+
+a.navbar-spacer {
+	color: green;
+	width: 2em;
+	display: none;
+}
+
+@media(min-width: 1000px) {
+	a.navbar-spacer {
+		color: red;
+		width: 10em;
+		display: block;
+		visibility: hidden;
+	}
+}
+
+/*** Sidebar Links *******************************************/
+a.sidebar-link:link {
+	font-size: 1.2em;
+	font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
+	font-weight: bold;
+	color: #aaf;
+	text-decoration: none;
+	margin: 0; border: 0; padding: 0.2em;
+}
+
+/*** Footer Text *********************************************/
+.footer-text {
+	margin: 0; border: 0; padding: 0.2em;
+}
+

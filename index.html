@@ -1,60 +1,273 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Manipulating the DOM</title>
-  <!-- Load Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
-  <link href="css/styles.css" rel="stylesheet">
-</head>
-<body>
-  <!-- HTML Follows BEM naming conventions
-  IDs are only used for sections to connect menu achors to sections -->
-  <header class="page__header">
-    <nav class="navbar__menu">
-      <!-- Navigation starts as empty UL that will be populated with JS -->
-      <ul id="navbar__list"></ul>
-    </nav>
-  </header>
-  <main>
-    <header class="main__hero">
-      <h1>Landing Page </h1>
-    </header>
-    <!-- Each Section has an ID (used for the anchor) and
-    a data attribute that will populate the li node.
-    Adding more sections will automatically populate nav.
-    The first section is set to active class by default -->
-    <section id="section1" data-nav="Section 1" class="your-active-class">
-      <div class="landing__container">
-        <h2>Section 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Biller - Landing Page Project</title>
+    <link rel='stylesheet' href='./css/index-styles.css'>
+  </head>
 
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
+  <body>
+
+      <!-- xxx The container is a css grid with 4 columns and 6 rows xxxxxxxxxxxxxxxxx -->
+
+  	<div class='container'>
+
+  		<!-- xxx 1st row, 1st column, the banner image xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+  		<div class='banner-image'></div>
+
+  		<!-- xxx 1st row, 2nd column is (effectively) the site title xxxxxxxxxxxxxxxxxxx -->
+
+  		<header class='banner'>
+  			<div class='banner-text-container-centre'>
+  				<h1 class="banner">Andrew Biller</h1>
+  				<h2 class="banner">Landing Page Project</h2>
+  			</div>
+  		</header>
+
+      <!-- xxx 2nd row, new navbar (as required by rubric) xxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+      <nav class='navbar'>
+        <div class='navbar-button-container'>
+          <a href='./blog-entries/2021-01-05-blog-entry.html' class='button navbar-button'>First Blog<span class='show-when-wide'> Entry</span></a>
+          <a href='./blog-entries/2021-01-14-blog-entry.html' class='button navbar-button'>Last Blog<span class='show-when-wide'> Entry</span></a>
+          <a href='./subscribe.html' class='navbar-spacer'></a>
+          <a href='./subscribe.html' class='button navbar-button'>Subscribe</a>
+        </div>
+      </nav>
+
+  		<!-- xxx Grid 3rd row - a introduction to the site xxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+  		<section class='content'>
+
+        <article>
+
+          <h4><span class="show-when-wide">Introduction</span></h4>
+
+          <p>This site is a <u>simulation</u> of a personal blogging site, used for experimentation and learning with
+            basic html, css and 'responsive' layouts for the Udacity 'Front End Web Developer' nanodegree
+            programme.</p>
+
+          <p>On this, the 'home' page, a 'flex flow' setting of 'row wrap' is used to reorganise the 'card'
+            based links to the various blog etries into a gallery.</p>
+
+          <p>On the blog pages themselves, a media query is used to turn the horizontal, in line, navigation
+            section into a sidebar, by switching the flex flow from <b>row</b> to <b>column.</b></p>
+
+          <p>And there are some simple tweaks to make things look better on mobile devices, based on
+            the device pixel ratio.</p>
+
+          <p>Of course, I missed some things that were in the <u>project rubric</u> on my first submission, inlcuding
+            this:</p>
+
+          <blockquote>"You have to include &lt;b&gt; for bold, and &lt;u&gt; for underline properties inside your paragraph tag
+            and also include &lt;blockquote&gt; in your project."</blockquote>
+
+          <p>Which is itself good practice in finding out how to quote html tags on an html page!</p>
+
+        </article>
+
+  		</section>
+
+  		<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+  		<section class='blog-index-cards'>
+
+        <div class='sidebar-title-container'>
+    		  <h4>To the posts ...</h4>
+        </div>
+
+        <div class='sidebar-flex-container'>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-14-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>14/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-14-blog-entry.html' class='sidebar-link'>So, today is ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Thursday 14th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-13-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>13/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-13-blog-entry.html' class='sidebar-link'>Time for a tidy up ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Wednesday 13th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-12-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>12/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-12-blog-entry.html' class='sidebar-link'>Styling a couple of buttons ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Tuesday 12th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-11-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>11/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-11-blog-entry.html' class='sidebar-link'>Back to project objectives ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Monday 11th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-10-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>10/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-10-blog-entry.html' class='sidebar-link'>A weekend political thought ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Sunday 10th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-08-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>8/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-08-blog-entry.html' class='sidebar-link'>Not very inspired Fridays ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Friday 8th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-07-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>7/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-07-blog-entry.html' class='sidebar-link'>And it's not even a full moon ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Thursday 7th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-06-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>6/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-06-blog-entry.html' class='sidebar-link'>Two things to start today ...</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Wednesday 6th January 2021</h6></div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/2021-01-05-blog-photo-small.jpg' alt='Todays Selfie' class='index-thumbnail'>
+                <figcaption>5/01/21</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-05-blog-entry.html' class='sidebar-link'>Lessons done ... now what?</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Tuesday 5th January 2021</h6>
+              </div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+            <div class='sidebar-choice-card'>
+              <figure class='sidebar-choice-card-image'>
+                <img src='./blog-photos/banner-image-ab.jpg' alt='Card Image' class='index-thumbnail'>
+                <figcaption>Very Old</figcaption>
+              </figure>
+              <div class='sidebar-choice-card-title'>
+                <a href='./blog-entries/2021-01-social-landings.html' class='sidebar-link'>Social media landing page.</a>
+              </div>
+              <div class='sidebar-choice-card-date'><h6>Dummy link destinations</h6>
+              </div>
+            </div>
+
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+        </div>
+  		</section>
+
+      <!-- xxx Footer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+      <div class='footer-container'>
+        <div class='footer-left'></div>
+        <footer class='footer'>
+          <div class='footer-text-container'>
+            <h5 class="footer-text">Andrew Biller, Ashbourne House Technology<span class="show-when-wide"> Ltd</span></h5>
+          </div>
+          <div class='footer-icon-container'>
+            <a href='./blog-entries/2021-01-social-landings.html#facebook'>
+              <img src='./blog-icons/facebook.png' alt='Facebook' class='footer-icon'>
+            </a>
+            <a href='./blog-entries/2021-01-social-landings.html#instagram'>
+              <img src='./blog-icons/instagram.jpg' alt='Instagram' class='footer-icon'>
+            </a>
+            <a href='./blog-entries/2021-01-social-landings.html#twitter'>
+              <img src='./blog-icons/twitter.png' alt='Twitter' class='footer-icon'>
+            </a>
+            <a href='./blog-entries/2021-01-social-landings.html#youtube'>
+              <img src='./blog-icons/youtube.png' alt='YouTube' class='footer-icon'>
+            </a>
+            <a href='./blog-entries/2021-01-social-landings.html#linkedin'>
+              <img src='./blog-icons/linkedin.png' alt='Linkedin' class='footer-icon'>
+            </a>
+          </div>
+        </footer>
+        <section class='devinfo'>
+          <h6 class="footer-text">
+            <span class='width-less-than-0400'>w<400</span>
+            <span class='width-less-than-0500'>400< w <500</span>
+            <span class='width-less-than-0600'>500px < width < 600px</span>
+            <span class='width-less-than-0700'>600px < window width < 700px</span>
+            <span class='width-less-than-0800'>700px < window width < 800px</span>
+            <span class='width-less-than-0900'>800px < window width < 900px</span>
+            <span class='width-less-than-1000'>900px < window width < 1000px</span>
+            <span class='width-less-than-1200'>1000px < window width < 1200px</span>
+            <span class='width-less-than-1400'>1200px < window width < 1400px</span>
+            <span class='width-less-than-1600'>1400px < window width</span>
+          </h6>
+        </section>
+        <div class='footer-right'></div>
       </div>
-    </section>
-    <section id="section2" data-nav="Section 2">
-      <div class="landing__container">
-        <h2>Section 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
 
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
-      </div>
-    </section>
-    <section id="section3" data-nav="Section 3">
-      <div class="landing__container">
-        <h2>Section 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
+      <!-- xxx Fillers xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-        <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
-      </div>
-    </section>
-  </main>
-  <footer class="page__footer">
-    <p>&copy Udacity</p>
-  </footer>
+      <div class='left-fill'></div>
+      <div class='filler'></div>
+      <div class='right-fill'></div>
 
-</body>
-</html>
+      <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+  	</div>
+  </body>
+ </html>

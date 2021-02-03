@@ -1,0 +1,79 @@
+/********************************************************/
+/* Styles related to screen/wndow size and aspect ratio */
+/*                                                      */
+/*  ... specifically 'mobile' styles are elsewhere      */
+/********************************************************/
+
+/* Defaults for some show and hide spans */
+
+.hide-when-wide {
+	display: inline;
+}
+
+.show-when-wide {
+	display: none;
+}
+
+/*** Adjustments determined by window width @ 500 pixels ****************************/
+
+@media(max-width:500px) {
+
+	.hide-when-wide {
+		display: none;
+	}
+
+}
+
+/*** Adjustments determined by window width @ 600 pixels ****************************/
+
+@media(min-width:600px) {
+
+	.hide-when-wide {
+		display: none;
+	}
+
+	/*.hidden-button {
+		visibility: collapse;
+	}*/
+
+	/*** Make the footer container a bit narrower ... */
+	/***   ... i.e. add some space at the sides       */
+
+	.footer-container {
+		grid-template-columns: 20px auto 20px;
+	}
+
+	/*** Chnage the flex flow in the biography on the */
+	/***   bog pages.                                 */
+
+	.bio-container {
+		flex-flow: row;
+		padding: 10px 0 10px 0;
+	}
+
+	.show-when-wide {
+		display: inline;
+	}
+
+}
+
+/*** Adjustments determined by window width @ 800 pixels ****************************/
+
+	/*** Add yet more space st the side of the footer ... */
+
+@media(min-width:800px) {
+	.footer-container {
+		grid-template-columns: 120px auto 120px;
+	}
+
+
+}
+
+/*** Above 1300 pixels add space on each side the whole way down the page ***********/
+
+@media(min-width:1300px) {
+	.container {
+		grid-template-columns: 1fr 172px 1228px 1fr;
+	}
+}
+

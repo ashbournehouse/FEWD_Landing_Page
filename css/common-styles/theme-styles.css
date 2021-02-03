@@ -1,0 +1,315 @@
+/***************************************************/
+/* Common (theme) styles for all page layouts      */
+/* All the strong themes should be in here         */
+/***************************************************/
+
+body {
+	 	/* make sure that there are no spurious margins and borders hanging around */
+	margin: 0; border: 0; padding: 0;
+}
+
+article {
+	font-style: normal;
+	margin: 0;
+	padding: 1em 2em 1em 2em;
+}
+
+aside {
+	font-style: italic;
+	margin:10px 0 10px 0;
+	border-top: 1px solid #ccc;
+	border-right: 50px solid transparent;
+	border-bottom: 1px solid #ccc;
+	border-left: 50px solid transparent;
+	padding: 10px 0 10px 0;
+}
+
+figure {
+	position: relative;
+}
+
+figcaption {
+	color: #fff;
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+	right:0;
+	text-align: center;
+	font-family: Verdana, Tahoma, Arial, Sans-Serif;
+	font-weight: bold;
+	font-size: 0.7em;
+}
+
+.box {
+	background: #ccc;
+	color: #ff0;
+	margin: 0; border: 0; padding: 0;
+}
+
+.container {
+	height: 100vh;
+	display: grid;
+  grid-template-columns: 0 172px 1fr 0;
+  grid-template-rows: 146px auto auto auto auto 1fr;
+  grid-template-areas:
+  'left imag bann rght'
+  'left nav nav rght'
+  'left cont cont rght'
+	'left side side rght'
+	'left foot foot rght'
+	'left fill fill rght';
+	background: #363;
+}
+
+.left-fill {
+	grid-area: left;
+	background: #666;
+}
+
+.right-fill {
+	grid-area: rght;
+	background: #666;
+}
+
+.banner{
+	grid-area: bann;
+	background: #464;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	vertical-align: center;
+	border-top: 4px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 4px solid #000;
+	border-left: 1px solid #000;
+}
+
+.banner-text-container-centre {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+.banner-image{
+	grid-area: imag;
+	background: #f00;
+	background-image: url('../blog-photos/banner-image-ab.jpg');
+	background-size: cover;
+	/*height: 146px; width: 172px;
+	height: 100%; width: auto;*/
+
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.navbar {
+	grid-area: nav;
+	background: #333;
+	margin:; 0;
+	border: 1px solid #000;
+	border-bottom: 4px solid #000;
+	padding: 0;
+}
+
+.navbar-button-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.4em 0 0.4em 0;
+	background: transparent;
+}
+
+.content {
+	grid-area: cont;
+	background: #447;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2em 0 2em 0;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+}
+
+.content-text-container {
+	max-width: 800px;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	text-align: left;
+}
+
+.bio-container {
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: center;
+	font-style: italic;
+	margin:10px 0 10px 0;
+	border-top: 1px solid #ccc;
+	border-right: 50px solid transparent;
+	border-bottom: 1px solid #ccc;
+	border-left: 50px solid transparent;
+	padding: 20px 0 10px 0;
+}
+
+.sidebar, .blog-index-cards {
+	grid-area: side;
+	background: #333;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+}
+
+.sidebar-title-container {
+	padding: 1.1em 0 0 1em;
+}
+
+.sidebar-flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	border-top: 4px solid #333;
+	border-bottom: 4px solid #333;
+	padding: 0.2em 0 0.2em 0;
+	background: transparent;
+}
+
+.sidebar-choice-card {
+	display: grid;
+  grid-template-columns: 5.6em 4em auto;
+  grid-template-rows: 2.4em 2em;
+  grid-template-areas:
+  'thum titl titl'
+  'thum spac date';
+  background: #336;
+  margin: 4px 10px 4px 10px;
+  border-radius: 2px;
+  width: 29em;
+}
+
+.sidebar-choice-card-image {
+	grid-area: thum;
+	position: relative;
+	/*background: #f0f;*/
+	background: transparent;
+	margin: 0; border: 0 solid #0f0; padding: 0;
+	border-radius: 2px;
+	height: 100%;
+}
+
+.sidebar-choice-card-title {
+	grid-area: titl;
+	background: #336;
+	padding: 4px 8px 4px 8px;
+  border-radius: 2px;
+}
+
+.sidebar-choice-card-date {
+	grid-area: date;
+	background: #336;
+	padding: 4px 8px 4px 8px;
+  border-radius: 2px;
+	text-align: right;
+}
+
+.sidebar-button-container {
+	display: inline-block;
+  height: 20px; width: 120px;
+  background: #993;
+  margin: 10px 120px 10px 10px;
+  border-radius: 4px;
+  border 1px solid #ccc;
+  padding 4px;
+}
+
+.button {
+	width: 4em;
+}
+
+.push {
+	margin-left: auto;
+}
+
+.footer-container {
+	grid-area: foot;
+	display: grid;
+  grid-template-columns: 10px auto 10px;
+  grid-template-rows: auto minmax(4px, auto);
+  grid-template-areas:
+ 'ft-l ft-c ft-r'
+ 'ft-l devinf ft-r';
+  background: #666;
+}
+
+.footer-left {
+	grid-area: ft-l;
+	background: #666;
+	border-left: 1px solid #000;
+}
+
+.footer {
+	grid-area: ft-c;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	background: #666;
+	border-right: 80px solid #666;
+	border-bottom: 1px solid #ccc;
+	border-left: 80px solid #666;
+}
+
+.footer-text-container {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	align-content: space-around;
+	text-align: center;
+	padding: 0.2em 0 0.2em 0;
+}
+
+.footer-icon-container {
+	width: 100%;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-between;
+	color: red;
+}
+
+.devinfo{
+	grid-area: devinf;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-end;
+	align-items: center;
+	background: #666;
+	border-right: 120px solid #666;
+	border-bottom: 1px solid #ccc;
+	border-left: 120px solid #666;
+}
+
+.footer-right {
+	grid-area: ft-r;
+	background: #666;
+	border-right: 1px solid #000;
+}
+
+.filler {
+	grid-area: fill;
+	background: #666;
+	border-right: 1px solid #000;
+	border-bottom: 100px solid transparent;
+	border-left: 1px solid #000;
+}

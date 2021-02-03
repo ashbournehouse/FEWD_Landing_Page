@@ -1,0 +1,210 @@
+
+/***********************************************************/
+/* css tweaks for mobile devices ... a bit rough and ready */
+/*  ... but they do improve things. ON INDEX PAGE          */
+/***********************************************************/
+
+
+/**************************************************************
+/*** Most phones and tablets      ****************************/
+/*** Width is for Galaxy Fold only !! ************************/
+
+@media screen
+	and (-webkit-min-device-pixel-ratio: 2)
+{
+		/* debug colours !!
+	.banner {background: cyan;} */
+
+	body {
+		font-size: 10px;
+	}
+
+	aside {
+		border-right: 5px solid transparent;
+		border-left: 5px solid transparent;
+	}
+
+	h1 {font-size: 1.6em}
+	h2 {font-size: 1.4em}
+	h4 {font-size: 1.4em}
+	h6 {font-size: 0.9em}
+	p, li, blockquote {font-size: 1.4em}
+
+	blockquote {
+		font-weight: normal;
+		padding: 0.6em 1.6em 0.6em 3em;;
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 0 90px 1fr 0;
+  	grid-template-rows: 76px auto auto auto auto 1fr;
+	  grid-template-areas:
+	  'left imag bann rght'
+	  'left nav nav rght'
+		'left side side rght'
+	  'left cont cont rght'
+		'left foot foot rght'
+		'left fill fill rght';
+	}
+
+	.sidebar-title-container {
+		display: none;
+	}
+
+	.sidebar-flex-container {
+		flex-flow: row wrap;
+	}
+
+	.footer{
+		border-right: 5px solid #666;
+		border-left: 5px solid #666;
+	}
+
+	.devinfo{
+		border-right: 10px solid #666;
+		border-left: 10px solid #666;
+	}
+
+	.hidden-button {
+		display: none;
+	}
+
+	.hide-when-wide {
+		display: none;
+	}
+
+}
+
+/**************************************************************
+/*** Anything bigger than 300px wide *************************/
+
+@media screen
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (min-width: 299px)
+{
+		/* debug colours !!
+	.banner {background: magenta;} */
+
+	body {
+		font-size: 12px;
+	}
+
+	h1 {font-size: 1.6em}
+	h2 {font-size: 1.4em}
+	h4 {font-size: 1.4em}
+	h6 {font-size: 1.0em}
+	p, li {font-size: 1.4em}
+	blockquote {font-size: 1.3em}
+	a.sidebar-link {font-size: 1.2em}
+
+	.footer{
+		border-right: 20px solid #666;
+		border-left: 20px solid #666;
+	}
+
+	.devinfo{
+		border-right: 40px solid #666;
+		border-left: 40px solid #666;
+	}
+
+}
+
+/**************************************************************
+/*** Anything bigger than 720px wide *************************/
+/*** iPad, iPhone X portrait *********************************/
+
+@media screen
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (min-width: 720px)
+	and (orientation: portrait)
+{
+		/* debug colours !!
+	.banner {background: red;} */
+
+	body {
+		font-size: 12px;
+	}
+
+	aside {
+		border-right: 30px solid transparent;
+		border-left: 30px solid transparent;
+	}
+
+	h1 {font-size: 2em}
+	h2 {font-size: 1.6em}
+	h4 {font-size: 1.4em}
+	h6 {font-size: 1.0em}
+	p, li {font-size: 1.4em}
+	blockquote {font-size: 1.3em}
+	a.sidebar-link:link {font-size: 1.2em}
+
+	.container {
+		grid-template-columns: 0 140px 1fr 0;
+  	grid-template-rows: 120px auto auto auto auto 1fr;
+  }
+
+	.footer{
+		border-right: 40px solid #666;
+		border-left: 40px solid #666;
+	}
+
+	.devinfo{
+		border-right: 60px solid #666;
+		border-left: 60px solid #666;
+	}
+
+	.hidden-button {
+		display: block;
+	}
+
+	.hide-when-wide {
+		display: inline;
+	}
+
+}
+
+/**************************************************************
+/*** Anything bigger than 1000px wide ************************/
+/*** iPad Pro ************************************************/
+
+@media screen
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (min-width: 1000px)
+{
+		/* debug colours !!
+	.banner {background: blue;} */
+
+	body{
+		font-size: 14px;
+	}
+
+	aside {
+		border-right: 50px solid transparent;
+		border-left: 50px solid transparent;
+	}
+
+	h1 {font-size: 2em}
+	h2 {font-size: 1.6em}
+	h4 {font-size: 1.4em}
+	h6 {font-size: 1.0em}
+	p, li {font-size: 1.4em}
+	blockquote {font-size: 1.3em}
+	a.sidebar-link:link {font-size: 1.15em}
+
+.container {
+		grid-template-columns: 0 172px 1fr 0;
+  	grid-template-rows: 146px auto auto auto auto 1fr;
+  }
+
+	.footer{
+		border-right: 80px solid #666;
+		border-left: 80px solid #666;
+	}
+
+	.devinfo{
+		border-right: 120px solid #666;
+		border-left: 120px solid #666;
+	}
+
+}

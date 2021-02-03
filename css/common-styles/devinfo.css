@@ -1,0 +1,107 @@
+/********************************************************/
+/* An experiment using responisive styles to show the   */
+/*  window width in 'pure' html                         */
+/*  ... but now we're allowed to do JavaScript          */
+/********************************************************/
+
+.width-less-than-0400 {display: none; padding: 0.2em;}
+.width-less-than-0500 {display: none; padding: 0.2em;}
+.width-less-than-0600 {display: none; margin: 0.2em;}
+.width-less-than-0700 {display: none; margin: 0.2em;}
+.width-less-than-0800 {display: none; padding: 0.2em;}
+.width-less-than-0900 {display: none; padding: 0.2em;}
+.width-less-than-0900 {display: none; padding: 0.2em;}
+.width-less-than-1000 {display: none; padding: 0.2em;}
+.width-less-than-1200 {display: none; padding: 0.2em;}
+.width-less-than-1400 {display: none; padding: 0.2em;}
+.width-less-than-1600 {display: none; padding: 0.2em;}
+.width-less-than-1800 {display: none; padding: 0.2em;}
+.width-less-than-2000 {display: none; padding: 0.2em;}
+.width-greater-than-2000 {display: none;}
+
+@media(max-width:399px) {
+	.width-less-than-0400 {display: inline;}
+	/*.devinfo {background: orange;}*/
+}
+
+@media(min-width:400px) {
+	.width-less-than-0500 {display: inline;}
+	/*.devinfo {background: yellow;}*/
+}
+
+@media(min-width:500px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: inline;}
+	/*.devinfo {background: green;}*/
+}
+
+@media(min-width:600px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: none;}
+	.width-less-than-0700 {display: inline;}
+	/*.devinfo {background: blue;}*/
+}
+
+@media(min-width:700px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: none;}
+	.width-less-than-0700 {display: none;}
+	.width-less-than-0800 {display: inline;}
+	/*.devinfo {background: purple;}*/
+}
+
+@media(min-width:800px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: none;}
+	.width-less-than-0700 {display: none;}
+	.width-less-than-0800 {display: none;}
+	.width-less-than-0900 {display: inline;}
+	/*.devinfo {background: gray;}*/
+}
+
+@media(min-width:900px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: none;}
+	.width-less-than-0700 {display: none;}
+	.width-less-than-0800 {display: none;}
+	.width-less-than-0900 {display: none;}
+	.width-less-than-1000 {display: inline;}
+	/*.devinfo {background: white;}*/
+}
+
+@media(min-width:1000px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: none;}
+	.width-less-than-0700 {display: none;}
+	.width-less-than-0800 {display: none;}
+	.width-less-than-0900 {display: none;}
+	.width-less-than-1000 {display: none;}
+	.width-less-than-1200 {display: inline;}
+	/*.devinfo {background: black;}*/
+}
+
+
+@media(min-width:1200px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: none;}
+	.width-less-than-0700 {display: none;}
+	.width-less-than-0800 {display: none;}
+	.width-less-than-0900 {display: none;}
+	.width-less-than-1000 {display: none;}
+	.width-less-than-1200 {display: none;}
+	.width-less-than-1400 {display: inline;}
+	/*.devinfo {background: brown;}*/
+}
+
+@media(min-width:1400px) {
+	.width-less-than-0500 {display: none;}
+	.width-less-than-0600 {display: none;}
+	.width-less-than-0700 {display: none;}
+	.width-less-than-0800 {display: none;}
+	.width-less-than-0900 {display: none;}
+	.width-less-than-1000 {display: none;}
+	.width-less-than-1200 {display: none;}
+	.width-less-than-1400 {display: none;}
+	.width-less-than-1600 {display: inline;}
+	/*.devinfo {background: red;}*/
+}
