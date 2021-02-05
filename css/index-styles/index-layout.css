@@ -31,6 +31,10 @@
   height: auto;
 }
 
+.blog-card-hover {
+	 background: #ff0;
+}
+
 .blog-card-image {
 	grid-area: thum;
 	position: relative;

@@ -1,3 +1,11 @@
+/***************************************************/
+/* This JS file is for page setup tasks            */
+/*                                                 */
+/* This needs to run after the page has loadeded   */
+/*  so will get called at the end of the index     */
+/*  page source.                                   */
+/***************************************************/
+
 /**
  *
  * Manipulating the DOM exercise.
