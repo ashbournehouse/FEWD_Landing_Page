@@ -35,6 +35,10 @@
 	 background: #ff0;
 }
 
+.blog-card-highlighted {
+	 background: #f00;
+}
+
 .blog-card-image {
 	grid-area: thum;
 	position: relative;

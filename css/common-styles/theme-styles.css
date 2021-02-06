@@ -3,6 +3,10 @@
 /* All the strong themes should be in here         */
 /***************************************************/
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 	 	/* make sure that there are no spurious margins and borders hanging around */
 	margin: 0; border: 0; padding: 0;
@@ -40,6 +44,12 @@ figcaption {
 	font-size: 0.7em;
 }
 
+li.list-item-link-container {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0.5em 0 0.5em 0; /* Remove margins */
+}
+
 .box {
 	background: #ccc;
 	color: #ff0;
@@ -59,6 +69,7 @@ figcaption {
 	'left foot foot rght'
 	'left fill fill rght';
 	background: #363;
+	scroll-behavior: smooth;
 }
 
 .left-fill {

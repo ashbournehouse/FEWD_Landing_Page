@@ -187,3 +187,9 @@ a.sidebar-link:link {
 	margin: 0; border: 0; padding: 0.2em;
 }
 
+/*** Spans ***************************************************/
+
+.done {
+	color: #f66;
+	font-weight: bold;
+}
