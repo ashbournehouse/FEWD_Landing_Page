@@ -55,7 +55,8 @@ listOfBlogCardIds.forEach (function(item) {
 	newQuicklink.href = '#' + item;
 	let dateString = "";
 		/* console.log(typeof item) */
-	dateString = item.substring(8,10) + '/' + item.substring(5,7) + '/' + item.substring(0,4);
+	/* dateString = item.substring(8,10) + '/' + item.substring(5,7) + '/' + item.substring(0,4); */
+	dateString = item.substring(9,11) + '/' + item.substring(6,8) + '/' + item.substring(1,5);
 	newQuicklink.innerHTML = dateString;
 	newQuicklink.className = 'button navbar-button';
 	quickLinksDiv.appendChild(newQuicklink);

@@ -32,7 +32,7 @@ window.addEventListener("hashchange", function() {
 	/* Use the header 'name' as a dummy link *******/
 const myName = document.getElementById('myName');
 	/* Decide which div to target ******************/
-const myTargetDivId = '2021-01-11'
+const myTargetDivId = 'd2021-01-11'
 
 /*******************************************************************************************/
 /*** Instal some test event handlers for each blog card ************************************/
@@ -72,36 +72,36 @@ myName.onclick = function(){
 /*******************************************************************************************/
 
 function changeCardColor (event) {
-	console.log("Entering changeCardColor");
+	// console.log("Entering changeCardColor");
 	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
-		console.log('Found blog card class is: ' + foundBlogCard.className)
+		//console.log('Found blog card class is: ' + foundBlogCard.className)
 		foundBlogCard.className = 'blog-card blog-card-hover';
-		console.log('Class changed to: ' + foundBlogCard.className)
+		//console.log('Class changed to: ' + foundBlogCard.className)
 	}
-	console.log("Leaving changeCardColor");
+	//console.log("Leaving changeCardColor");
 }
 
 /*******************************************************************************************/
 
 function restoreCardColor (event) {
-	console.log("Entering changeCardColor");
+	//console.log("Entering changeCardColor");
 	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
-		console.log('Found blog card class is: ' + foundBlogCard.className)
+		//console.log('Found blog card class is: ' + foundBlogCard.className)
 		foundBlogCard.className = 'blog-card';
-		console.log('Class changed to: ' + foundBlogCard.className)
+		//console.log('Class changed to: ' + foundBlogCard.className)
 	}
-	console.log("Leaving changeCardColor");
+	//console.log("Leaving changeCardColor");
 }
 
 /*******************************************************************************************/
 
 function hasAncestorWithClass(thisElement, thisName) {
 	if (foundBlogCard = event.target.closest('.' + thisName)) {
-		console.log(event.target + ' has a parent with class ' + thisName);
+		//console.log(event.target + ' has a parent with class ' + thisName);
 		return foundBlogCard;
 	}
 	else {
-		console.log(event.target + ' has NO parent with class ' + thisName);
+		//console.log(event.target + ' has NO parent with class ' + thisName);
 		return false;
 	}
 }
@@ -114,23 +114,26 @@ function scrollTargetDivToWindowCentre() {
 	console.log('Running scrollTargetDivToWindowCentre ...');
 	console.log(' Current hash is: ' + document.location.hash);
 	console.log(' Type is: ' + (typeof document.location.hash));
-	console.log('*****************************************');
-	const targetDiv = document.querySelector('#2021-01-09');
+	 // const targetDiv = document.querySelector('#d2021-01-10');
+	const targetDiv = document.querySelector(document.location.hash);
 	console.log('targetDiv is: ' + (targetDiv.id));
 
-		/* Work out where to scroll to *****************
-	const targetDivOffsetTop = targetDiv.documentOffsetTop();
-	const targetDivHalfHeight = (targetDiv.offsetHeight / 2);
-		/* Find the centre of the window ***************
-	let halfWindowHeight = (window.innerHeight / 2 );  /* This doesn't seem to update as window is resized
+		// Work out where to scroll to *****************
+	let targetDivOffsetTop = targetDiv.documentOffsetTop();
+	console.log('targetDivOffsetTop is :' + targetDivOffsetTop);
+	let targetDivHalfHeight = (targetDiv.offsetHeight / 2);
+	console.log('targetDivHalfHeight is :' + targetDivHalfHeight);
+		// Find the centre of the window ***************
+	let halfWindowHeight = (window.innerHeight / 2 );  // This doesn't seem to update as window is resized
 	console.log('Fixed half window height :' + halfWindowHeight);
-	console.log('*****************************************')
 
-	let scrollTarget = myDivOffsetTop + myDivHalfHeight - halfWindowHeight;
+	let scrollTargetY = targetDivOffsetTop + targetDivHalfHeight - halfWindowHeight;
+	console.log('scrollTargetY is :' + scrollTargetY);
 
-	*/
+	//window.scrollTo(window.scrollX, window.scrollY + 2000);
+	window.scrollTo(window.scrollX, scrollTargetY);
+	console.log('*****************************************');
 
-	window.scrollTo(window.scrollX, window.scrollY + 2000);
 }
 
 
