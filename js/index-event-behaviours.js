@@ -33,6 +33,8 @@ window.addEventListener('scroll', function ( event ) {
 		// Now perform any actions required when window starts scrolling
 		//   * this could probably optimised to run only ONCE with each scroll
 		//   * if performance becomes an issue.
+		//   *  see maybe:
+		//   *   https://davidwalsh.name/javascript-debounce-function
 	noramliseBlogCardsWhenScrollingStarts();
 		// If scrolling has stopped for long enough (e.g. 75 mSecs) perform
 		//  the actions required when scrolling stops (as a 'callback')

@@ -84,20 +84,20 @@ img.blog-card-image {
 	display: flex;
 	flex-flow: row;
 	justify-content: flex-end;
-	align-items: center;
-	padding: 4px 24px 4px 8px;
+	align-content: center;
+	padding: 8px 24px 4px 8px;
   border-radius: 1em;
 	text-align: right;
 }
 
 .blog-card-title {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row;
 	justify-content: flex-start;
-	align-items: center;
+	align-content: center;
 	background: #336;
 	grid-area: titl;
-	padding: 4px 8px 4px 24px;
+	padding: 8px 8px 4px 24px;
 	border-radius: 1em;
 }
 

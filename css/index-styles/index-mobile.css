@@ -4,13 +4,3 @@
 /*  introduce the navbar required by the rubric            */
 /***********************************************************/
 
-.container {
-  grid-template-areas:
-  'left imag bann rght'
-  'left nav nav rght'
-	'left cont cont rght'
-  'left side side rght'
-	'left foot foot rght'
-	'left fill fill rght';
-}
-

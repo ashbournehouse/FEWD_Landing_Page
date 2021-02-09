@@ -35,6 +35,10 @@
 		padding: 0.6em 1.6em 0.6em 3em;;
 	}
 
+	a.button {
+		font-size: 0.8em;
+	}
+
 	.container {
 		display: grid;
 		grid-template-columns: 0 90px 1fr 0;
@@ -42,8 +46,8 @@
 	  grid-template-areas:
 	  'left imag bann rght'
 	  'left nav nav rght'
-		'left side side rght'
 	  'left cont cont rght'
+		'left side side rght'
 		'left foot foot rght'
 		'left fill fill rght';
 	}
@@ -54,6 +58,19 @@
 
 	.sidebar-flex-container {
 		flex-flow: row wrap;
+	}
+
+	h2.blog-card-headings {
+		font-size: 1.1em;
+		margin: 0; border: 0; padding: 0 0 0.2em 0;
+	}
+
+	.blog-card-date {
+		padding: 6px 12px 4px 4px;
+	}
+
+	.blog-card-title {
+		padding: 6px 4px 4px 12px;
 	}
 
 	.footer{
@@ -98,6 +115,19 @@
 	blockquote {font-size: 1.3em}
 	a.sidebar-link {font-size: 1.2em}
 
+	h2.blog-card-headings {
+		font-size: 1.4em;
+		margin: 0; border: 0; padding: 0 0 0.2em 0;
+	}
+
+	.blog-card-date {
+		padding: 8px 12px 4px 12px;
+	}
+
+	.blog-card-title {
+		padding: 8px 4px 4px 12px;
+	}
+
 	.footer{
 		border-right: 20px solid #666;
 		border-left: 20px solid #666;
@@ -138,6 +168,20 @@
 	p, li {font-size: 1.4em}
 	blockquote {font-size: 1.3em}
 	a.sidebar-link:link {font-size: 1.2em}
+
+	h2.blog-card-headings {
+		font-size: 1.6em;
+		margin: 0; border: 0; padding: 0 0 0.2em 0;
+	}
+
+	.blog-card-date {
+		padding: 8px 12px 4px 12px;
+	}
+
+	.blog-card-title {
+		padding: 8px 4px 4px 12px;
+	}
+
 
 	.container {
 		grid-template-columns: 0 140px 1fr 0;
@@ -192,7 +236,20 @@
 	blockquote {font-size: 1.3em}
 	a.sidebar-link:link {font-size: 1.15em}
 
-.container {
+	h2.blog-card-headings {
+		font-size: 1.8em;
+		margin: 0; border: 0; padding: 0 0 0.2em 0;
+	}
+
+	.blog-card-date {
+		padding: 12px 16px 4px 24px;
+	}
+
+	.blog-card-title {
+		padding: 12px 24px 4px 16px;
+	}
+
+	.container {
 		grid-template-columns: 0 172px 1fr 0;
   	grid-template-rows: 146px auto auto auto auto 1fr;
   }

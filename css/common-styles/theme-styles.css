@@ -118,6 +118,10 @@ li.list-item-link-container {
 }
 
 .navbar {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 	grid-area: nav;
 	background: #333;
 	margin:; 0;
