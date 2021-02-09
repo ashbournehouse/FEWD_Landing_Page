@@ -9,6 +9,56 @@
 console.log('Event behavoiurs script installed(?) if that is a suitable term');
 
 //*******************************************************************************************
+// The behaviour of this page is governed by the scroll action. Javascript doesn't give
+// us a onScrollStop action so we need to use a timer and the setTimeout() method.
+//
+// setTimeout() returns a numeric ID for the timer that has been set (there can be many
+// timers running).
+//
+// So we need a variable in which to store the ID and then set up the timer behaviour
+// as the window is scrolled.
+//*******************************************************************************************
+
+let currentScrollTimerId;
+
+//*******************************************************************************************
+// Now set a listener on the window scroll events
+//  acknowledging help from: https://gomakethings.com/
+//    detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
+//*******************************************************************************************
+
+window.addEventListener('scroll', function ( event ) {
+		// Clear the current timer if the window is scrolling
+	window.clearTimeout(currentScrollTimerId);
+		// Now perform any actions required when window starts scrolling
+		//   * this could probably optimised to run only ONCE with each scroll
+		//   * if performance becomes an issue.
+	noramliseBlogCardsWhenScrollingStarts();
+		// If scrolling has stopped for long enough (e.g. 75 mSecs) perform
+		//  the actions required when scrolling stops (as a 'callback')
+	currentScrollTimerId = setTimeout(function() {
+			// Here's the callback
+		dimBlogCardsWhenScrollingStops();
+		highlightBlogCardInTheMiddleOfTheWindow ();
+		  // ... and this is debugging, helping me learn how this stuff works.
+		console.log('===============================================');
+		console.log('Scrolling has stopped.');
+		console.log('Type of isScrolling is: ' + typeof(currentScrollTimerId) );
+		console.log('Value of isScrolling is: ' + currentScrollTimerId );
+	}, 75); // The final parameter (here) is the timeout value.
+
+}, false);
+
+//*******************************************************************************************
+// ^^^ The final parameter 'passive' here = 'false' is associated with scrolling
+// performance, however developer.mozilla.org says this:
+//
+//  'You don't need to worry about the value of passive for the basic scroll event. Since
+//   it can't be canceled, event listeners can't block page rendering anyway.'
+//*******************************************************************************************
+
+
+//*******************************************************************************************
 //** Prototypes DO NOT get hoisted ... it seems                ******************************
 
 Element.prototype.documentOffsetTop = function () {
@@ -27,34 +77,6 @@ window.addEventListener("hashchange", function() {
 	scrollTargetDivToWindowCentre();
 });
 
-//*******************************************************************************************
-//** Check when the page is scrolling *******************************************************
-//**.  from: https://gomakethings.com/detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
-
-let isScrolling;
-
-window.addEventListener('scroll', function ( event ) {
-		// Clear our timeout throughout the scroll
-	window.clearTimeout( isScrolling );
-	noramliseBlogCardsWhenScrollingStarts();
-		// Set a timeout to run after scrolling ends
-	isScrolling = setTimeout(function() {
-			// Run the callback
-		dimBlogCardsWhenScrollingStops();
-		highlightBlogCardInTheMiddleOfTheWindow ();
-		console.log( 'Scrolling has stopped.' );
-	}, 200);
-
-}, false);
-
-
-/*
-window.onscroll = function() {
-	documentOnScrollActions();
-};
-*/
-
-//window.addEventListener("scroll", documentOnScrollActions(), {passive: true});
 
 //*******************************************************************************************
 //** Declare global variables ***************************************************************
@@ -66,8 +88,9 @@ window.onscroll = function() {
 let blogCards = document.querySelectorAll('.blog-card');
 
 for(var i=0; i<blogCards.length; i++){
-	blogCards[i].onmouseover = blogCardOnMouseOver;
+	blogCards[i].onmousedown = blogCardOnMouseDown;
   blogCards[i].onmouseout = blogCardOnMouseOut;
+  blogCards[i].ondblclick = blogCardOnMouseOut;
  	};
 
 //*******************************************************************************************
@@ -194,8 +217,8 @@ function noramliseBlogCardsWhenScrollingStarts (event) {
 
 //*******************************************************************************************
 
-function blogCardOnMouseOver (event) {
-		// console.log("Entering blogCardOnMouseOver");
+function blogCardOnMouseDown (event) {
+		// console.log("Entering blogCardOnMouseDown");
 	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
 				// Dim all the other blog cards
 			blogCardsToDim = document.querySelectorAll('.blog-card');
@@ -208,7 +231,7 @@ function blogCardOnMouseOver (event) {
 		foundBlogCard.className = 'blog-card blog-card-highlighted';
 			//console.log('Class changed to: ' + foundBlogCard.className)
 	}
-		//console.log("Leaving blogCardOnMouseOver");
+		//console.log("Leaving blogCardOnMouseDown");
 }
 
 //*******************************************************************************************
