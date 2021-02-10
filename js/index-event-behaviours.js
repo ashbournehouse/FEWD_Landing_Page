@@ -119,32 +119,29 @@ function scrollTargetDivIntoView() {
 	console.log('Entering scrollTargetDivIntoView ...');
 	console.log(' Current hash is: ' + document.location.hash);
 	console.log(' Type is: ' + (typeof document.location.hash));
-	 // const targetDiv = document.querySelector('#d2021-01-10');
 	const targetDiv = document.querySelector(document.location.hash);
 	console.log('targetDiv is: ' + (targetDiv.id));
 
-		// Work out where to scroll to *****************
 	let targetDivOffsetTop = targetDiv.documentOffsetTop();
-	console.log('targetDivOffsetTop is :' + targetDivOffsetTop);
-	let targetDivHalfHeight = (targetDiv.offsetHeight / 2);
-	console.log('targetDivHalfHeight is :' + targetDivHalfHeight);
-		// Find the centre of the window ***************
-	let halfWindowHeight = (window.innerHeight / 2 );  // This doesn't seem to update as window is resized
-	console.log('Fixed half window height :' + halfWindowHeight);
+	let targetDivHeight = targetDiv.offsetHeight;
+	let windowHeight = window.innerHeight;  // This doesn't seem to update as window is resized?
+	let scrollTargetY = 0;
 
-	let scrollTargetY = targetDivOffsetTop + targetDivHalfHeight - halfWindowHeight;
-	console.log('scrollTargetY is :' + scrollTargetY);
+	if (targetDivHeight < windowHeight) {
+			//********************************************************************
+			// Target div fits in the window ... scroll to middle
+			//********************************************************************
+		scrollTargetY = targetDivOffsetTop + (targetDivHeight - windowHeight)/2;
+	}
+	else {
+			//********************************************************************
+			// Target div bigger than the window ...scroll to top
+			//********************************************************************
+		scrollTargetY = targetDivOffsetTop - (windowHeight * 0.05);
+	};
 	window.scrollTo(window.scrollX, scrollTargetY);
 
-		// Now dim all the blog cards
-	blogCardsToDim = document.querySelectorAll('.blog-card');
-	for (let lc1 = 0; lc1 < blogCardsToDim.length; lc1++){
-		console.log('blogCardsToDim is: ' + blogCardsToDim[lc1].className);
-		blogCardsToDim[lc1].className = 'blog-card blog-card-dimmed';
-	}
-
-		// And highlight the selected blog card
-	targetDiv.className = 'blog-card blog-card-highlighted';
+		// Hightlighting is handled by the scrolling handlers
 
 	console.log('Leaving scrollTargetDivIntoView ...');
 	console.log('*****************************************');
@@ -243,9 +240,14 @@ function blogCardOnClick (event) {
 //*******************************************************************************************
 
 function homeButtonOnClick (event) {
+	console.log("==========================");
 	console.log("Entering homeButtonOnClick");
+		// Remove the current anchor from the URL
+	history.pushState("", document.title, window.location.pathname + window.location.search);
+		// ... and scroll to the top
 	window.scrollTo(window.scrollX, 0);
 	console.log("Leaving homeButtonOnClick");
+	console.log("==========================");
 }
 
 //*******************************************************************************************
