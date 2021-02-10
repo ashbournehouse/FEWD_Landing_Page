@@ -9,6 +9,35 @@
 console.log('Event behavoiurs script installed(?) if that is a suitable term');
 
 //*******************************************************************************************
+// Prototypes DO NOT get hoisted ... it seems
+//   This returns the offset of an element from the top of the document
+//   (it's recursive so might be expensive in time??)
+//*******************************************************************************************
+
+Element.prototype.documentOffsetTop = function () {
+    return this.offsetTop + ( this.offsetParent ? this.offsetParent.documentOffsetTop() : 0 );
+};
+
+//*******************************************************************************************
+// Set up a listener on the home button
+//*******************************************************************************************
+
+let homeButton = document.querySelector('.home-button');
+if (homeButton) {
+		//console.log("Home button found");
+	homeButton.addEventListener('click', function(event) {homeButtonOnClick()} );
+};
+
+//*******************************************************************************************
+// Set listeners on each blog card to highlght when clicked
+//*******************************************************************************************
+let blogCards = document.querySelectorAll('.blog-card');
+
+for(var i=0; i < blogCards.length; i++) {
+	blogCards[i].addEventListener('click', function(event) {blogCardOnClick(event)});
+};
+
+//*******************************************************************************************
 // The behaviour of this page is governed by the scroll action. Javascript doesn't give
 // us a onScrollStop action so we need to use a timer and the setTimeout() method.
 //
@@ -27,7 +56,39 @@ let currentScrollTimerId;
 //    detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
 //*******************************************************************************************
 
-window.addEventListener('scroll', function ( event ) {
+window.addEventListener('scroll', function(event) {scrollEventHandler()}, false);
+
+			//*******************************************************************************************
+			// ^^^ The final parameter 'passive' here = 'false' is associated with scrolling
+			// performance, however developer.mozilla.org says this:
+			//
+			//  'You don't need to worry about the value of passive for the basic scroll event. Since
+			//   it can't be canceled, event listeners can't block page rendering anyway.'
+			//*******************************************************************************************
+
+//*******************************************************************************************
+// Now set a listener on the window resize events
+//*******************************************************************************************
+
+window.addEventListener('resize', function(event) {
+	console.log("Window resize listener added")
+});
+
+//*******************************************************************************************
+//** Scroll 'div' anchored bog cards so that they are centred in the visible window *********
+
+window.addEventListener("hashchange", function() {
+	console.log('******************************')
+	console.log('Running hashchange handler ...')
+	console.log('******************************')
+	scrollTargetDivIntoView();
+});
+
+//*******************************************************************************************
+//** Place functions down here for readability, they will get 'hoisted' *********************
+//*******************************************************************************************
+
+function scrollEventHandler() {
 		// Clear the current timer if the window is scrolling
 	window.clearTimeout(currentScrollTimerId);
 		// Now perform any actions required when window starts scrolling
@@ -48,74 +109,14 @@ window.addEventListener('scroll', function ( event ) {
 		console.log('Type of isScrolling is: ' + typeof(currentScrollTimerId) );
 		console.log('Value of isScrolling is: ' + currentScrollTimerId );
 	}, 75); // The final parameter (here) is the timeout value.
-
-}, false);
-
-//*******************************************************************************************
-// ^^^ The final parameter 'passive' here = 'false' is associated with scrolling
-// performance, however developer.mozilla.org says this:
-//
-//  'You don't need to worry about the value of passive for the basic scroll event. Since
-//   it can't be canceled, event listeners can't block page rendering anyway.'
-//*******************************************************************************************
-
-
-//*******************************************************************************************
-//** Prototypes DO NOT get hoisted ... it seems                ******************************
-
-Element.prototype.documentOffsetTop = function () {
-    return this.offsetTop + ( this.offsetParent ? this.offsetParent.documentOffsetTop() : 0 );
 };
 
 //*******************************************************************************************
-//** What about event handlers? These seem to work anywhere in the code source **************
-//*******************************************************************************************
-//** Scroll 'div' anchored bog cards so that they are centred in the visible window *********
 
-window.addEventListener("hashchange", function() {
-	console.log('******************************')
-	console.log('Running hashchange handler ...')
-	console.log('******************************')
-	scrollTargetDivToWindowCentre();
-});
-
-
-//*******************************************************************************************
-//** Declare global variables ***************************************************************
-//*******************************************************************************************
-
-//*******************************************************************************************
-//** Install some test event handlers for each blog card ************************************
-
-let blogCards = document.querySelectorAll('.blog-card');
-
-for(var i=0; i<blogCards.length; i++){
-	blogCards[i].onmousedown = blogCardOnMouseDown;
-  blogCards[i].onmouseout = blogCardOnMouseOut;
-  blogCards[i].ondblclick = blogCardOnMouseOut;
- 	};
-
-//*******************************************************************************************
-//** Place functions down here for readability, they will get 'hoisted' *********************
-//*******************************************************************************************
-
-function hasAncestorWithClass(thisElement, thisName) {
-	if (foundBlogCard = event.target.closest('.' + thisName)) {
-			//console.log(event.target + ' has a parent with class ' + thisName);
-		return foundBlogCard;
-	}
-	else {
-			//console.log(event.target + ' has NO parent with class ' + thisName);
-		return false;
-	}
-}
-
-//*******************************************************************************************
-
-function scrollTargetDivToWindowCentre() {
+function scrollTargetDivIntoView() {
 
 	console.log('*****************************************');
-	console.log('Running scrollTargetDivToWindowCentre ...');
+	console.log('Entering scrollTargetDivIntoView ...');
 	console.log(' Current hash is: ' + document.location.hash);
 	console.log(' Type is: ' + (typeof document.location.hash));
 	 // const targetDiv = document.querySelector('#d2021-01-10');
@@ -145,8 +146,41 @@ function scrollTargetDivToWindowCentre() {
 		// And highlight the selected blog card
 	targetDiv.className = 'blog-card blog-card-highlighted';
 
+	console.log('Leaving scrollTargetDivIntoView ...');
 	console.log('*****************************************');
 
+}
+
+//*******************************************************************************************
+
+function noramliseBlogCardsWhenScrollingStarts (event) {
+		console.log("================================================");
+		console.log("Entering noramliseBlogCardsWhenScrollingStarts");
+		if (window.scrollY != 0) {
+			blogCardsToReset = document.querySelectorAll('.blog-card');
+			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
+				console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
+				blogCardsToReset[lc1].className = 'blog-card';
+			}
+		}
+		console.log("Leaving noramliseBlogCardsWhenScrollingStarts");
+		console.log("================================================");
+}
+
+//*******************************************************************************************
+
+function dimBlogCardsWhenScrollingStops (event) {
+		console.log("================================================");
+		console.log("Entering dimBlogCardsWhenScrollingStops");
+		if (window.scrollY != 0) {
+			blogCardsToReset = document.querySelectorAll('.blog-card');
+			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
+				console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
+				blogCardsToReset[lc1].className = 'blog-card blog-card-dimmed';
+			}
+		}
+		console.log("Leaving dimBlogCardsWhenScrollingStops");
+		console.log("================================================");
 }
 
 //*******************************************************************************************
@@ -185,42 +219,11 @@ function highlightBlogCardInTheMiddleOfTheWindow (event) {
 		console.log("================================================");
 }
 
-
 //*******************************************************************************************
 
-function dimBlogCardsWhenScrollingStops (event) {
-		console.log("================================================");
-		console.log("Entering dimBlogCardsWhenScrollingStops");
-		if (window.scrollY != 0) {
-			blogCardsToReset = document.querySelectorAll('.blog-card');
-			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
-				console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
-				blogCardsToReset[lc1].className = 'blog-card blog-card-dimmed';
-			}
-		}
-		console.log("Leaving dimBlogCardsWhenScrollingStops");
-		console.log("================================================");
-}
-//*******************************************************************************************
-
-function noramliseBlogCardsWhenScrollingStarts (event) {
-		console.log("================================================");
-		console.log("Entering noramliseBlogCardsWhenScrollingStarts");
-		if (window.scrollY != 0) {
-			blogCardsToReset = document.querySelectorAll('.blog-card');
-			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
-				console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
-				blogCardsToReset[lc1].className = 'blog-card';
-			}
-		}
-		console.log("Leaving noramliseBlogCardsWhenScrollingStarts");
-		console.log("================================================");
-}
-
-//*******************************************************************************************
-
-function blogCardOnMouseDown (event) {
-		// console.log("Entering blogCardOnMouseDown");
+function blogCardOnClick (event) {
+		console.log("========================");
+		console.log("Entering blogCardOnClick");
 	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
 				// Dim all the other blog cards
 			blogCardsToDim = document.querySelectorAll('.blog-card');
@@ -233,42 +236,28 @@ function blogCardOnMouseDown (event) {
 		foundBlogCard.className = 'blog-card blog-card-highlighted';
 			//console.log('Class changed to: ' + foundBlogCard.className)
 	}
-		//console.log("Leaving blogCardOnMouseDown");
+		console.log("Leaving blogCardOnClick");
+		console.log("========================");
 }
 
 //*******************************************************************************************
 
-function blogCardOnMouseOut (event) {
-		//console.log("Entering blogCardOnMouseOut");
-	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
-			//console.log('Found blog card class is: ' + foundBlogCard.className)
-		foundBlogCard.class = 'blog-card';
-			//console.log('Class changed to: ' + foundBlogCard.className)
-	}
-		//console.log("Leaving blogCardOnMouseOut");
+function homeButtonOnClick (event) {
+	console.log("Entering homeButtonOnClick");
+	window.scrollTo(window.scrollX, 0);
+	console.log("Leaving homeButtonOnClick");
 }
-/*
-//** Test scrolling using a single div  *****************************************************
 
-const myDiv = document.getElementById(myTargetDivId);
-console.log('myDiv is: ' + (myDiv.id));
-	// Work out where to scroll to *****************
-const myDivOffsetTop = myDiv.documentOffsetTop();
-const myDivHalfHeight = (myDiv.offsetHeight / 2);
-	// Find the centre of the window ***************
-let halfWindowHeight = (window.innerHeight / 2 );  // This doesn't seem to update as window is resized
-console.log('Fixed half window height :' + halfWindowHeight);
+//*******************************************************************************************
 
-let scrollTarget = myDivOffsetTop + myDivHalfHeight - halfWindowHeight;
+function hasAncestorWithClass(thisElement, thisName) {
+	if (foundBlogCard = event.target.closest('.' + thisName)) {
+			//console.log(event.target + ' has a parent with class ' + thisName);
+		return foundBlogCard;
+	}
+	else {
+			//console.log(event.target + ' has NO parent with class ' + thisName);
+		return false;
+	}
+}
 
-//******************************************************************************************
-//** This is just a dummy link using the page title ****************************************
-
-myName.onclick = function(){
-  console.log('Scrolling target is: ' + scrollTarget);
-  window.scrollTo( 0, scrollTarget);
-  myDiv.className = ('blog-card blog-card-highlighted')
-  console.log('We should have scrolled to : + myTargetDivId');
-	};
-
-*/

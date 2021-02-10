@@ -303,3 +303,23 @@ li.list-item-link-container {
 	border-bottom: 100px solid transparent;
 	border-left: 1px solid #000;
 }
+
+.home-button {
+	height: 1.4em;
+	width: 2em;
+	background: #663;
+	z-index: 2;
+	position: fixed; bottom: 1em; right: 1em;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	border: 2.5px solid #ccc;
+	border-radius: 40%;
+	font-family: Verdana, Tahoma, Arial, Sans-Serif;
+	font-size: 1.4em;
+	font-weight: bolder;
+	color: #ccc;
+	margin: 1em;
+	padding: 0.15em 0 0 0;
+}
