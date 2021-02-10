@@ -34,7 +34,7 @@ console.log('**************');
 
 const navbarTitleDiv = document.createElement('div');
 navbarTitleDiv.className = 'title-container';
-navbarTitleDiv.innerHTML = '<h4>Quick Navigation</h4>';
+navbarTitleDiv.innerHTML = '<h4>Jump to blog entries ...</h4>';
 
 /*** Create a 'div' to contain all the navigation links *****************************************/
 

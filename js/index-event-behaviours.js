@@ -34,6 +34,8 @@ if (homeButton) {
 let blogCards = document.querySelectorAll('.blog-card');
 
 for(var i=0; i < blogCards.length; i++) {
+	console.log(`blogcards[i] is: ${blogCards[i]}`)
+	blogCards[i].addEventListener('dblclick', function(event) {blogCardOnDblClick(event)});
 	blogCards[i].addEventListener('click', function(event) {blogCardOnClick(event)});
 };
 
@@ -71,7 +73,7 @@ window.addEventListener('scroll', function(event) {scrollEventHandler()}, false)
 //*******************************************************************************************
 
 window.addEventListener('resize', function(event) {
-	console.log("Window resize listener added")
+	windowResizeHandler();
 });
 
 //*******************************************************************************************
@@ -81,7 +83,7 @@ window.addEventListener("hashchange", function() {
 	console.log('******************************')
 	console.log('Running hashchange handler ...')
 	console.log('******************************')
-	scrollTargetDivIntoView();
+	scrollTargetDivIntoView(document.querySelector(document.location.hash));
 });
 
 //*******************************************************************************************
@@ -96,13 +98,14 @@ function scrollEventHandler() {
 		//   * if performance becomes an issue.
 		//   *  see maybe:
 		//   *   https://davidwalsh.name/javascript-debounce-function
-	noramliseBlogCardsWhenScrollingStarts();
+	noramliseAllBlogCards();
 		// If scrolling has stopped for long enough (e.g. 75 mSecs) perform
 		//  the actions required when scrolling stops (as a 'callback')
 	currentScrollTimerId = setTimeout(function() {
 			// Here's the callback
-		dimBlogCardsWhenScrollingStops();
+		dimAllBlogCards();
 		highlightBlogCardInTheMiddleOfTheWindow ();
+		showHideHomeButton();
 		  // ... and this is debugging, helping me learn how this stuff works.
 		console.log('===============================================');
 		console.log('Scrolling has stopped.');
@@ -113,16 +116,30 @@ function scrollEventHandler() {
 
 //*******************************************************************************************
 
-function scrollTargetDivIntoView() {
+function windowResizeHandler() {
+	console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+	console.log('Entering windowResizeHandler');
+	dimAllBlogCards();
+	highlightBlogCardInTheMiddleOfTheWindow();
+	showHideHomeButton();
+	console.log('Leaving windowResizeHandler');
+	console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+};
+
+//*******************************************************************************************
+
+function scrollTargetDivIntoView(targetDiv) {
 
 	console.log('*****************************************');
 	console.log('Entering scrollTargetDivIntoView ...');
-	console.log(' Current hash is: ' + document.location.hash);
-	console.log(' Type is: ' + (typeof document.location.hash));
-	const targetDiv = document.querySelector(document.location.hash);
-	console.log('targetDiv is: ' + (targetDiv.id));
+	//console.log(' Current hash is: ' + document.location.hash);
+	//console.log(' Type is: ' + (typeof document.location.hash));
+	//const targetDiv = document.querySelector(document.location.hash);
+	console.log(`targetDiv type is: ${(targetDiv)}`);
+	console.log(`targetDiv is: ${targetDiv.id}`);
 
 	let targetDivOffsetTop = targetDiv.documentOffsetTop();
+	console.log(`Initial targetDivOffsetTop is: ${targetDivOffsetTop}`)
 	let targetDivHeight = targetDiv.offsetHeight;
 	let windowHeight = window.innerHeight;  // This doesn't seem to update as window is resized?
 	let scrollTargetY = 0;
@@ -143,6 +160,8 @@ function scrollTargetDivIntoView() {
 
 		// Hightlighting is handled by the scrolling handlers
 
+	targetDivOffsetTop = targetDiv.documentOffsetTop();
+	console.log(`New targetDivOffsetTop is: ${targetDivOffsetTop}`)
 	console.log('Leaving scrollTargetDivIntoView ...');
 	console.log('*****************************************');
 
@@ -150,9 +169,9 @@ function scrollTargetDivIntoView() {
 
 //*******************************************************************************************
 
-function noramliseBlogCardsWhenScrollingStarts (event) {
-		console.log("================================================");
-		console.log("Entering noramliseBlogCardsWhenScrollingStarts");
+function noramliseAllBlogCards (event) {
+		//console.log("================================================");
+		//console.log("Entering noramliseAllBlogCards");
 		if (window.scrollY != 0) {
 			blogCardsToReset = document.querySelectorAll('.blog-card');
 			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
@@ -160,15 +179,15 @@ function noramliseBlogCardsWhenScrollingStarts (event) {
 				blogCardsToReset[lc1].className = 'blog-card';
 			}
 		}
-		console.log("Leaving noramliseBlogCardsWhenScrollingStarts");
-		console.log("================================================");
+		//console.log("Leaving noramliseAllBlogCards");
+		//console.log("================================================");
 }
 
 //*******************************************************************************************
 
-function dimBlogCardsWhenScrollingStops (event) {
+function dimAllBlogCards (event) {
 		console.log("================================================");
-		console.log("Entering dimBlogCardsWhenScrollingStops");
+		console.log("Entering dimAllBlogCards");
 		if (window.scrollY != 0) {
 			blogCardsToReset = document.querySelectorAll('.blog-card');
 			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
@@ -176,7 +195,7 @@ function dimBlogCardsWhenScrollingStops (event) {
 				blogCardsToReset[lc1].className = 'blog-card blog-card-dimmed';
 			}
 		}
-		console.log("Leaving dimBlogCardsWhenScrollingStops");
+		console.log("Leaving dimAllBlogCards");
 		console.log("================================================");
 }
 
@@ -239,6 +258,19 @@ function blogCardOnClick (event) {
 
 //*******************************************************************************************
 
+function blogCardOnDblClick (event) {
+		console.log("========================");
+		console.log("Entering blogCardOnClick");
+	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
+				// Scroll to the double clicked blog card
+		scrollTargetDivIntoView(foundBlogCard);
+	}
+		console.log("Leaving blogCardOnClick");
+		console.log("========================");
+}
+
+//*******************************************************************************************
+
 function homeButtonOnClick (event) {
 	console.log("==========================");
 	console.log("Entering homeButtonOnClick");
@@ -249,6 +281,36 @@ function homeButtonOnClick (event) {
 	console.log("Leaving homeButtonOnClick");
 	console.log("==========================");
 }
+
+//*******************************************************************************************
+
+function showHideHomeButton() {
+	console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+	console.log('Entering showHideHomeButton');
+		let homeButton = document.querySelector('.home-button');
+		if (window.scrollY > window.innerHeight/4) {
+			homeButton.style.display = 'flex';
+			let buttonFromRight = 20;
+			if (window.innerWidth <= 1000) {
+					//homeButton.style.background = 'red'; // debug functionality
+				buttonFromRight = 2;
+			}
+			else if (window.innerWidth > 1400){
+					//homeButton.style.background = 'blue'; // debug functionality
+				buttonFromRight = ((window.innerWidth - 1400)/2) + 12;
+			}
+			else {
+					//homeButton.style.background = 'green'; // debug functionality
+			}
+			homeButton.style.right = `${buttonFromRight}px`;
+
+		}
+		else {
+			homeButton.style.display = 'none';
+		}
+	console.log('Leaving showHideHomeButton');
+	console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+};
 
 //*******************************************************************************************
 
@@ -263,3 +325,4 @@ function hasAncestorWithClass(thisElement, thisName) {
 	}
 }
 
+//*******************************************************************************************

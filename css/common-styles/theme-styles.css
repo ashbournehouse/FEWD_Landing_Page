@@ -310,7 +310,7 @@ li.list-item-link-container {
 	background: #663;
 	z-index: 2;
 	position: fixed; bottom: 1em; right: 1em;
-	display: flex;
+	display: none;
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
