@@ -91,6 +91,11 @@ img.blog-card-image {
 	border-radius: 1em;
 }
 
+.blog-card-article {
+	margin: 0;
+	padding: 1em 2em 1em 2em;
+}
+
 h2.blog-card-headings {
 	font-size: 1.1em;
 	margin: 0; border: 0; padding: 0 0 0.5em 0;
@@ -127,8 +132,25 @@ h2.blog-card-headings {
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
 
+	.blog-card {
+			/* Change the layout for narrow mobile screens (in portrait mode)   */
+  	grid-template-columns: 1em 1fr 19.6em 1fr 1em;
+  	grid-template-rows: 1em 14.2em 1em 4em 1em 4em 1em auto 1em;
+		grid-template-areas:
+ 		'btop btop btop btop btop'
+  	'blft spc4 thum spc5 brgt'
+  	'blft spc1 spc1 spc1 brgt'
+  	'blft date date date brgt'
+  	'blft spc2 spc2 spc2 brgt'
+  	'blft titl titl titl brgt'
+  	'blft spc3 spc3 spc3 brgt'
+  	'blft cont cont cont brgt'
+  	'blow blow blow blow blow';
+  }
+
 	.blog-card-date {
-		padding: 6px 12px 4px 4px;
+		justify-content: flex-start;
+		padding: 6px 4px 4px 12px;
 	}
 
 	.blog-card-title {
@@ -136,8 +158,18 @@ h2.blog-card-headings {
 	}
 
 	h2.blog-card-headings {
-		font-size: 1.1em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
+		font-size: 1.3em;
+		line-height: 1.3em;
+		margin: 0; border: 0; padding: 0;
+	}
+
+	.blog-card-article {
+		margin: 0;
+		padding: 1em 0.5em 1em 0.5em;
+	}
+
+	.blog-card-article p {
+		padding: 0.6em 0.6em 0.6em 1em;
 	}
 
 }
@@ -148,7 +180,7 @@ h2.blog-card-headings {
 @media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 299px) {
 
 	.blog-card-date {
-		padding: 8px 12px 4px 12px;
+		padding: 8px 4px 4px 12px;
 	}
 
 	.blog-card-title {
@@ -157,49 +189,38 @@ h2.blog-card-headings {
 
 	h2.blog-card-headings {
 		font-size: 1.4em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
+		line-height: 1.6em;
 	}
 
 }
 
 /**************************************************************
-/*** Anything bigger than 720px wide *************************/
-/*** iPad, iPhone X portrait *********************************/
+/*** Anything bigger than 620px wide *************************/
+/*** iPhone 6 and higher, iPad *******************************/
 
-@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 720px) and (orientation: portrait) {
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 620px) {
 
-	.blog-card-date {
-		padding: 8px 12px 4px 12px;
-	}
+	.blog-card {
+			/* Revert to 'desktop' style layut    */
+	  grid-template-columns: 1em 11.5em 0.5em 4em auto 1em;
+	  grid-template-rows: 1em 4.5em 0.8em 4.5em 0.5em auto 1em;
+	  grid-template-areas:
+	  'btop btop btop btop btop btop'
+	  'blft thum vspc date date brgt'
+	  'blft thum vspc tspc tspc brgt'
+	  'blft thum vspc titl titl brgt'
+	  'blft hspc hspc hspc hspc brgt'
+	  'blft cont cont cont cont brgt'
+	  'blow blow blow blow blow blow';
+	 }
 
-	.blog-card-title {
-		padding: 8px 4px 4px 12px;
-	}
-
-	h2.blog-card-headings {
-		font-size: 1.6em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
-	}
-
-}
-
-/**************************************************************
-/*** Anything bigger than 1000px wide ************************/
-/*** iPad Pro ************************************************/
-
-@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1000px) {
-
-	.blog-card-date {
+	.blog-card-date .blog-card-title {
 		padding: 12px 16px 4px 24px;
 	}
 
-	.blog-card-title {
-		padding: 12px 24px 4px 16px;
-	}
-
 	h2.blog-card-headings {
-		font-size: 1.8em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
+		font-size: 1.4em;
+		line-height: 2em;
 	}
 
 }
