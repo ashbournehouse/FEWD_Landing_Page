@@ -24,21 +24,31 @@ The site comprises, primarily a single page (see NOTE); the landing page. This i
 
 ## Features
 
- 1. Clicking on any of the dated navigation links scrolls the page to the appropriate 'blog card' which is:
+1. Clicking on any of the dated navigation links scrolls the page to the appropriate 'blog card' which is:
  	* centred in the window if it is shorter than the window height
  	* scrolled to the top of the window if it is taller than the window height
- 2. Once the scrolling is complete, all blog cards are dimmed except the selected card which is highlighted.
- 3. If manually scrolled the blog card closest to the window centre is highlighted, others are dimmed
- 4. Double clicking on a dimmed blog card scrolls it to the centre (or top) of the window and highlights it:
+2. Once the scrolling is complete, all blog cards are dimmed except the selected card which is highlighted.
+3. If manually scrolled the blog card closest to the window centre is highlighted, others are dimmed
+4. Double clicking on a dimmed blog card scrolls it to the centre (or top) of the window and highlights it:
   * Double clicking does not work on mobile devices
- 5. The navigation secton of the page 'sticks' to the top of the window for the first part of a page scroll
- 6. After a significant page scroll, a 'back to top' button apears in the lower right cormer of the window:
+5. The navigation secton of the page 'sticks' to the top of the window for the first part of a page scroll
+6. After a significant page scroll, a 'back to top' button apears in the lower right cormer of the window:
   * This has a 'tooltip' that appears on 'hover' to explain its function.
- 7. The page features 'responsve' adjustments for changes in window size:
+7. The page features 'responsve' adjustments for changes in window size:
   * The Javascript generated links in the navigation section 'flow' in row wrap mode as the window narrows.
   * The size of headings and text on the blog card changes to prevent overflow.
- 8. The page features responsive adjustments for mobile devices
+8. The page features responsive adjustments for mobile devices
   * The most significant of these is a change in the 'grid' for the blog cards when viewing on narrow:
      mobile devices.
 
+## Safari Grid Problem
 
+Safari currently doesn't support the grid gap feature of css so this has been set to 0 and the gaps implemented
+using margins.
+
+Safari also uses a correct but arguably outdated interpretation of 100% height for some div elements in a grid
+layout. I have therefore implemented a Javascript function which calcualtes the offsetHeight  of
+the child of each affected div and applies that as inline style (ugh!) on each page reload ad resize.
+
+There may be a better way (as it is a bit slow on page resizes) and that can be a job for a later refactor
+or, perhaps, it will become redundant with an update to Safari.

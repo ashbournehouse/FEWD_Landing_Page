@@ -22,11 +22,11 @@ const navbarElement = document.getElementById('navbar');
 
 /*** Log the list to the cosole for debugging purposes ******************************************/
 
-console.log('**************');
+  //console.log('**************');
 listOfBlogCardIds.forEach (function(item) {
-	console.log(item);
+	  //console.log(item);
 })
-console.log('**************');
+  //console.log('**************');
 
 /*** End debugging section **********************************************************************/
 
@@ -54,8 +54,8 @@ listOfBlogCardIds.forEach (function(item) {
 	let newQuicklink = document.createElement('a');
 	newQuicklink.href = '#' + item;
 	let dateString = "";
-		/* console.log(typeof item) */
-	/* dateString = item.substring(8,10) + '/' + item.substring(5,7) + '/' + item.substring(0,4); */
+		//console.log(typeof item)
+		// dateString = item.substring(8,10) + '/' + item.substring(5,7) + '/' + item.substring(0,4); */
 	dateString = item.substring(9,11) + '/' + item.substring(6,8) + '/' + item.substring(1,5);
 	newQuicklink.innerHTML = dateString;
 	newQuicklink.className = 'button navbar-button';
@@ -80,82 +80,27 @@ navbarElement.appendChild(quickLinksDiv);
 
 /*** DONE ... for now !! ************************************************************************/
 
+fixSafariGridHeights();
 
-/* ==================================================================================
+function fixSafariGridHeights() {
 
-Scroll to centre a div in position ....
+	  //console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+	  //console.log("Entering fixSafariGridHeights")
 
-==================================================================================
+	let divHeightsToFix = document.querySelectorAll('.blog-card-content');
+	for (let lc1 = 0; lc1 < divHeightsToFix.length; lc1++){
+		let articleElement = divHeightsToFix[lc1].querySelector('.blog-card-article')
+		  //console.log(`divHeightsToFix[lc1] is: ${divHeightsToFix[lc1]}`)
+		  //console.log(`articleElement is: ${articleElement}`)
+		  //console.log(`articleElement height is: ${articleElement.offsetHeight}`)
+		divHeightsToFix[lc1].style.height = `${articleElement.offsetHeight}px`;
 
-Element.prototype.documentOffsetTop = function () {
-    return this.offsetTop + ( this.offsetParent ? this.offsetParent.documentOffsetTop() : 0 );
-};
+	  //console.log("Leaving fixSafariGridHeights")
+	  //console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
-let divTop = document.getElementById('2021-01-10').documentOffsetTop() - (window.innerHeight / 2 );
+	}
 
-console.log('top is: ' + divTop);
+}
 
-window.scrollTo( 0, divTop );
-
-console.log('We should have scrolled to 12/01/2021');
-
-/* =============================================================================== */
-
-
-
-/**
- *
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- *
- * Dependencies: None
- *
- * JS Version: ES2015/ES6
- *
- * JS Standard: ESlint
- *
-*/
-
-/**
- * Define Global Variables
- *
-*/
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- *
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- *
-*/
-
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- *
-*/
-
-// Build menu
-
-// Scroll to section on link click
-
-// Set sections as active
+//*******************************************************************************************
 

@@ -3,12 +3,17 @@
 /*  should go in here.                                  */
 /********************************************************/
 
+.introduction {
+	padding: 0 2em 0 1em;
+}
+
 .blog-entries-container {
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
 	gap: 8em;
+	gap: 0;  /* flex gap doesn't yet work in Safari so set to 0 and use margins instead */
 	border-top: 4px solid #333;
 	border-bottom: 4px solid #333;
 	padding: 2em 0 12em 0;

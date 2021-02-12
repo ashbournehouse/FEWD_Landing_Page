@@ -6,7 +6,7 @@
 //  things tha way.                                **
 //***************************************************
 
-console.log('Event behavoiurs script installed(?) if that is a suitable term');
+  //console.log('Event behavoiurs script installed(?) if that is a suitable term');
 
 //*******************************************************************************************
 // Prototypes DO NOT get hoisted ... it seems
@@ -34,7 +34,7 @@ if (homeButton) {
 let blogCards = document.querySelectorAll('.blog-card');
 
 for(var i=0; i < blogCards.length; i++) {
-	console.log(`blogcards[i] is: ${blogCards[i]}`)
+	  //console.log(`blogcards[i] is: ${blogCards[i]}`)
 	blogCards[i].addEventListener('dblclick', function(event) {blogCardOnDblClick(event)});
 	blogCards[i].addEventListener('click', function(event) {blogCardOnClick(event)});
 };
@@ -80,9 +80,9 @@ window.addEventListener('resize', function(event) {
 //** Scroll 'div' anchored bog cards so that they are centred in the visible window *********
 
 window.addEventListener("hashchange", function() {
-	console.log('******************************')
-	console.log('Running hashchange handler ...')
-	console.log('******************************')
+	  //console.log('******************************')
+	  //console.log('Running hashchange handler ...')
+	  //console.log('******************************')
 	scrollTargetDivIntoView(document.querySelector(document.location.hash));
 });
 
@@ -107,39 +107,40 @@ function scrollEventHandler() {
 		highlightBlogCardInTheMiddleOfTheWindow ();
 		showHideHomeButton();
 		  // ... and this is debugging, helping me learn how this stuff works.
-		console.log('===============================================');
-		console.log('Scrolling has stopped.');
-		console.log('Type of isScrolling is: ' + typeof(currentScrollTimerId) );
-		console.log('Value of isScrolling is: ' + currentScrollTimerId );
+		  //console.log('===============================================');
+		  //console.log('Scrolling has stopped.');
+		  //console.log('Type of isScrolling is: ' + typeof(currentScrollTimerId) );
+		  //console.log('Value of isScrolling is: ' + currentScrollTimerId );
 	}, 75); // The final parameter (here) is the timeout value.
 };
 
 //*******************************************************************************************
 
 function windowResizeHandler() {
-	console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
-	console.log('Entering windowResizeHandler');
+	  //console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+	  //console.log('Entering windowResizeHandler');
+	fixSafariGridHeights2();
 	dimAllBlogCards();
 	highlightBlogCardInTheMiddleOfTheWindow();
 	showHideHomeButton();
-	console.log('Leaving windowResizeHandler');
-	console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+	  //console.log('Leaving windowResizeHandler');
+	  //console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
 };
 
 //*******************************************************************************************
 
 function scrollTargetDivIntoView(targetDiv) {
 
-	console.log('*****************************************');
-	console.log('Entering scrollTargetDivIntoView ...');
-	//console.log(' Current hash is: ' + document.location.hash);
-	//console.log(' Type is: ' + (typeof document.location.hash));
-	//const targetDiv = document.querySelector(document.location.hash);
-	console.log(`targetDiv type is: ${(targetDiv)}`);
-	console.log(`targetDiv is: ${targetDiv.id}`);
+	  //console.log('*****************************************');
+	  //console.log('Entering scrollTargetDivIntoView ...');
+		//console.log(' Current hash is: ' + document.location.hash);
+		//console.log(' Type is: ' + (typeof document.location.hash));
+		//const targetDiv = document.querySelector(document.location.hash);
+	  //console.log(`targetDiv type is: ${(targetDiv)}`);
+	  //console.log(`targetDiv is: ${targetDiv.id}`);
 
 	let targetDivOffsetTop = targetDiv.documentOffsetTop();
-	console.log(`Initial targetDivOffsetTop is: ${targetDivOffsetTop}`)
+	  //console.log(`Initial targetDivOffsetTop is: ${targetDivOffsetTop}`)
 	let targetDivHeight = targetDiv.offsetHeight;
 	let windowHeight = window.innerHeight;  // This doesn't seem to update as window is resized?
 	let scrollTargetY = 0;
@@ -161,9 +162,9 @@ function scrollTargetDivIntoView(targetDiv) {
 		// Hightlighting is handled by the scrolling handlers
 
 	targetDivOffsetTop = targetDiv.documentOffsetTop();
-	console.log(`New targetDivOffsetTop is: ${targetDivOffsetTop}`)
-	console.log('Leaving scrollTargetDivIntoView ...');
-	console.log('*****************************************');
+	  //console.log(`New targetDivOffsetTop is: ${targetDivOffsetTop}`)
+	  //console.log('Leaving scrollTargetDivIntoView ...');
+	  //console.log('*****************************************');
 
 }
 
@@ -175,7 +176,7 @@ function noramliseAllBlogCards (event) {
 		if (window.scrollY != 0) {
 			blogCardsToReset = document.querySelectorAll('.blog-card');
 			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
-				console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
+				  //console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
 				blogCardsToReset[lc1].className = 'blog-card';
 			}
 		}
@@ -186,24 +187,24 @@ function noramliseAllBlogCards (event) {
 //*******************************************************************************************
 
 function dimAllBlogCards (event) {
-		console.log("================================================");
-		console.log("Entering dimAllBlogCards");
+		  //console.log("================================================");
+		  //console.log("Entering dimAllBlogCards");
 		if (window.scrollY != 0) {
 			blogCardsToReset = document.querySelectorAll('.blog-card');
 			for (let lc1 = 0; lc1 < blogCardsToReset.length; lc1++){
-				console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
+				  //console.log('Class of blogCardsToReset[lc1] is: ' + blogCardsToReset[lc1].className);
 				blogCardsToReset[lc1].className = 'blog-card blog-card-dimmed';
 			}
 		}
-		console.log("Leaving dimAllBlogCards");
-		console.log("================================================");
+		  //console.log("Leaving dimAllBlogCards");
+		  //console.log("================================================");
 }
 
 //*******************************************************************************************
 
 function highlightBlogCardInTheMiddleOfTheWindow (event) {
-		console.log("================================================");
-		console.log("Entering highlightBlogCardInTheMiddleOfTheWindow");
+		  //console.log("================================================");
+		  //console.log("Entering highlightBlogCardInTheMiddleOfTheWindow");
 		let blogCardCentreY = 0;
 		let blogCardOffsetY = window.innerHeight; // a safe big value!!
 		let screenCentreY = (window.innerHeight / 2 );
@@ -216,7 +217,7 @@ function highlightBlogCardInTheMiddleOfTheWindow (event) {
 				 // And find its offset from the centre of the screen
 				blogCardOffsetY = Math.abs(screenCentreY - blogCardCentreY)
 
-				console.log(blogCardsToCheck[lc1].id + ' is at: ' + blogCardCentreY);
+				  //console.log(blogCardsToCheck[lc1].id + ' is at: ' + blogCardCentreY);
 				if (mostCentralBlogCardId != '') {
 					if (blogCardOffsetY < currentSmallestOffset) {
 						mostCentralBlogCardId = blogCardsToCheck[lc1].id;
@@ -228,23 +229,23 @@ function highlightBlogCardInTheMiddleOfTheWindow (event) {
 					currentSmallestOffset = blogCardOffsetY;
 				}
 			}
-		console.log('Centred blog card is: ' + mostCentralBlogCardId + ' at: ' + currentSmallestOffset);
+		  //console.log('Centred blog card is: ' + mostCentralBlogCardId + ' at: ' + currentSmallestOffset);
 		blogCardToHighlight = document.getElementById(mostCentralBlogCardId);
 		blogCardToHighlight.className = 'blog-card blog-card-highlighted';
-		console.log("Leaving highlightBlogCardInTheMiddleOfTheWindow");
-		console.log("================================================");
+		  //console.log("Leaving highlightBlogCardInTheMiddleOfTheWindow");
+		  //console.log("================================================");
 }
 
 //*******************************************************************************************
 
 function blogCardOnClick (event) {
-		console.log("========================");
-		console.log("Entering blogCardOnClick");
+		  //console.log("========================");
+		  //console.log("Entering blogCardOnClick");
 	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
 				// Dim all the other blog cards
 			blogCardsToDim = document.querySelectorAll('.blog-card');
 			for (let lc1 = 0; lc1 < blogCardsToDim.length; lc1++){
-				console.log('Class of blogCardsToDim[lc1] is: ' + blogCardsToDim[lc1].className);
+				  //console.log('Class of blogCardsToDim[lc1] is: ' + blogCardsToDim[lc1].className);
 				blogCardsToDim[lc1].className = 'blog-card blog-card-dimmed';
 
 			}
@@ -252,41 +253,41 @@ function blogCardOnClick (event) {
 		foundBlogCard.className = 'blog-card blog-card-highlighted';
 			//console.log('Class changed to: ' + foundBlogCard.className)
 	}
-		console.log("Leaving blogCardOnClick");
-		console.log("========================");
+		  //console.log("Leaving blogCardOnClick");
+		  //console.log("========================");
 }
 
 //*******************************************************************************************
 
 function blogCardOnDblClick (event) {
-		console.log("========================");
-		console.log("Entering blogCardOnClick");
+		  //console.log("========================");
+		  //console.log("Entering blogCardOnClick");
 	if (foundBlogCard = hasAncestorWithClass(event.target, 'blog-card')) {
 				// Scroll to the double clicked blog card
 		scrollTargetDivIntoView(foundBlogCard);
 	}
-		console.log("Leaving blogCardOnClick");
-		console.log("========================");
+		  //console.log("Leaving blogCardOnClick");
+		  //console.log("========================");
 }
 
 //*******************************************************************************************
 
 function homeButtonOnClick (event) {
-	console.log("==========================");
-	console.log("Entering homeButtonOnClick");
+	  //console.log("==========================");
+	  //console.log("Entering homeButtonOnClick");
 		// Remove the current anchor from the URL
 	history.pushState("", document.title, window.location.pathname + window.location.search);
 		// ... and scroll to the top
 	window.scrollTo(window.scrollX, 0);
-	console.log("Leaving homeButtonOnClick");
-	console.log("==========================");
+	  //console.log("Leaving homeButtonOnClick");
+	  //console.log("==========================");
 }
 
 //*******************************************************************************************
 
 function showHideHomeButton() {
-	console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
-	console.log('Entering showHideHomeButton');
+	  //console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv');
+	  //console.log('Entering showHideHomeButton');
 		let homeButton = document.querySelector('.home-button');
 		if (window.scrollY > window.innerHeight/4) {
 			homeButton.style.display = 'flex';
@@ -308,8 +309,8 @@ function showHideHomeButton() {
 		else {
 			homeButton.style.display = 'none';
 		}
-	console.log('Leaving showHideHomeButton');
-	console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+	  //console.log('Leaving showHideHomeButton');
+	  //console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
 };
 
 //*******************************************************************************************
@@ -323,6 +324,28 @@ function hasAncestorWithClass(thisElement, thisName) {
 			//console.log(event.target + ' has NO parent with class ' + thisName);
 		return false;
 	}
+}
+
+//*******************************************************************************************
+
+function fixSafariGridHeights2() {
+
+	  //console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+	  //console.log("Entering fixSafariGridHeights")
+
+	let divHeightsToFix = document.querySelectorAll('.blog-card-content');
+	for (let lc1 = 0; lc1 < divHeightsToFix.length; lc1++){
+		let articleElement = divHeightsToFix[lc1].querySelector('.blog-card-article')
+		  //console.log(`divHeightsToFix[lc1] is: ${divHeightsToFix[lc1]}`)
+		  //console.log(`articleElement is: ${articleElement}`)
+		  //console.log(`articleElement height is: ${articleElement.offsetHeight}`)
+		divHeightsToFix[lc1].style.height = `${articleElement.offsetHeight}px`;
+
+	  //console.log("Leaving fixSafariGridHeights")
+	  //console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+
+	}
+
 }
 
 //*******************************************************************************************
