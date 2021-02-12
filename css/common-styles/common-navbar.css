@@ -1,0 +1,93 @@
+/****************************************************
+/* Styles for the navbar (common)
+/***************************************************/
+
+.navbar {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	grid-area: nav;
+	background: #333;
+	margin:; 0;
+	border: 1px solid #000;
+	border-bottom: 4px solid #000;
+	padding: 0;
+}
+
+.navbar-button-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.4em 0 0.4em 0;
+	background: transparent;
+}
+
+a.button.navbar-button {
+	width: 7em;
+}
+
+a.navbar-spacer {
+	color: green;
+	width: 2em;
+	display: none;
+}
+
+@media(min-width: 1000px) {
+	a.navbar-spacer {
+		color: red;
+		width: 10em;
+		display: block;
+		visibility: hidden;
+	}
+}
+
+.hidden-navbar-button {
+	display: none;
+	height: 4em; width: 7.2em;
+  font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
+	font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  background-color: #663;
+  color: #ccc;
+  margin: 4px 20px 4px 20px;
+  border: none;
+  padding: 0;
+}
+
+/**************************************************************
+/*** Responsive adjustment for narrow/wide windows ***********/
+
+@media(min-width:600px) {
+
+	.hidden-navbar-button {
+		display: block;
+		visibility: hidden;
+}
+
+/**************************************************************
+/*** Most phones and tablets      ****************************/
+/*** Width is for Galaxy Fold only !! ************************/
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+	.hidden-navbar-button {
+		display: none;
+	}
+
+}
+
+/**************************************************************
+/*** Anything bigger than 720px wide *************************/
+/*** iPad, iPhone X portrait *********************************/
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 720px) and (orientation: portrait) {
+
+	.hidden-navbar-button {
+		display: block;
+	}
+
+}

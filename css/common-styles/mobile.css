@@ -9,11 +9,7 @@
 /*** Most phones and tablets      ****************************/
 /*** Width is for Galaxy Fold only !! ************************/
 
-@media screen
-	and (-webkit-min-device-pixel-ratio: 2)
-{
-		/* debug colours !!
-	.banner {background: cyan;} */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
 
 	body {
 		font-size: 10px;
@@ -60,19 +56,6 @@
 		flex-flow: row wrap;
 	}
 
-	h2.blog-card-headings {
-		font-size: 1.1em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
-	}
-
-	.blog-card-date {
-		padding: 6px 12px 4px 4px;
-	}
-
-	.blog-card-title {
-		padding: 6px 4px 4px 12px;
-	}
-
 	.footer{
 		border-right: 5px solid #666;
 		border-left: 5px solid #666;
@@ -81,10 +64,6 @@
 	.devinfo{
 		border-right: 10px solid #666;
 		border-left: 10px solid #666;
-	}
-
-	.hidden-button {
-		display: none;
 	}
 
 	.hide-when-wide {
@@ -96,12 +75,7 @@
 /**************************************************************
 /*** Anything bigger than 300px wide *************************/
 
-@media screen
-	and (-webkit-min-device-pixel-ratio: 2)
-	and (min-width: 299px)
-{
-		/* debug colours !!
-	.banner {background: magenta;} */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 299px) {
 
 	body {
 		font-size: 12px;
@@ -114,19 +88,6 @@
 	p, li {font-size: 1.4em}
 	blockquote {font-size: 1.3em}
 	a.sidebar-link {font-size: 1.2em}
-
-	h2.blog-card-headings {
-		font-size: 1.4em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
-	}
-
-	.blog-card-date {
-		padding: 8px 12px 4px 12px;
-	}
-
-	.blog-card-title {
-		padding: 8px 4px 4px 12px;
-	}
 
 	.footer{
 		border-right: 20px solid #666;
@@ -144,13 +105,7 @@
 /*** Anything bigger than 720px wide *************************/
 /*** iPad, iPhone X portrait *********************************/
 
-@media screen
-	and (-webkit-min-device-pixel-ratio: 2)
-	and (min-width: 720px)
-	and (orientation: portrait)
-{
-		/* debug colours !!
-	.banner {background: red;} */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 720px) and (orientation: portrait) {
 
 	body {
 		font-size: 12px;
@@ -169,20 +124,6 @@
 	blockquote {font-size: 1.3em}
 	a.sidebar-link:link {font-size: 1.2em}
 
-	h2.blog-card-headings {
-		font-size: 1.6em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
-	}
-
-	.blog-card-date {
-		padding: 8px 12px 4px 12px;
-	}
-
-	.blog-card-title {
-		padding: 8px 4px 4px 12px;
-	}
-
-
 	.container {
 		grid-template-columns: 0 140px 1fr 0;
   	grid-template-rows: 120px auto auto auto auto 1fr;
@@ -198,10 +139,6 @@
 		border-left: 60px solid #666;
 	}
 
-	.hidden-button {
-		display: block;
-	}
-
 	.hide-when-wide {
 		display: inline;
 	}
@@ -212,12 +149,7 @@
 /*** Anything bigger than 1000px wide ************************/
 /*** iPad Pro ************************************************/
 
-@media screen
-	and (-webkit-min-device-pixel-ratio: 2)
-	and (min-width: 1000px)
-{
-		/* debug colours !!
-	.banner {background: blue;} */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1000px) {
 
 	body{
 		font-size: 14px;
@@ -235,19 +167,6 @@
 	p, li {font-size: 1.4em}
 	blockquote {font-size: 1.3em}
 	a.sidebar-link:link {font-size: 1.15em}
-
-	h2.blog-card-headings {
-		font-size: 1.8em;
-		margin: 0; border: 0; padding: 0 0 0.2em 0;
-	}
-
-	.blog-card-date {
-		padding: 12px 16px 4px 24px;
-	}
-
-	.blog-card-title {
-		padding: 12px 24px 4px 16px;
-	}
 
 	.container {
 		grid-template-columns: 0 172px 1fr 0;

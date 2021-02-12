@@ -64,11 +64,6 @@ li {
 	padding: 0.2em;
 }
 
-/*** Banner **************************************************/
-h1.banner, h2.banner {
-	margin: 0; border: 0;
-	padding: 0.1em;
-}
 /*** Asides **************************************************/
 p.aside {
 	font-style: italic;
@@ -113,35 +108,6 @@ a.button {
 	}
 }
 
-/*@media(min-width: 800px) {
-	a.button {
-		width: 6.6em;
-	}
-}*/
-
-a.button.navbar-button {
-	width: 7em;
-}
-
-.hidden-button {
-	display: none;
-	height: 4em; width: 7.2em;
-  font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
-	font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  background-color: #663;
-  color: #ccc;
-  margin: 4px 20px 4px 20px;
-  border: none;
-  padding: 0;
-}
-
-@media(min-width:600px) {
-	.hidden-button {
-		display: block;
-		visibility: hidden;
-}
 
 a.button:hover {
   background-color: #996;
@@ -155,22 +121,6 @@ a.button:hover {
 a.button:visited {color: #ccc;}
 a.button:visited:hover {color: #666;}
 
-
-
-a.navbar-spacer {
-	color: green;
-	width: 2em;
-	display: none;
-}
-
-@media(min-width: 1000px) {
-	a.navbar-spacer {
-		color: red;
-		width: 10em;
-		display: block;
-		visibility: hidden;
-	}
-}
 
 /*** Sidebar Links *******************************************/
 a.sidebar-link:link {

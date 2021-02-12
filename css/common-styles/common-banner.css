@@ -1,0 +1,80 @@
+/****************************************************
+/* Styles for the page banner (common)
+/***************************************************/
+
+.banner{
+	grid-area: bann;
+	background: #464;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	vertical-align: center;
+	border-top: 4px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 4px solid #000;
+	border-left: 1px solid #000;
+}
+
+.banner-text-container-centre {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+.banner-image{
+	grid-area: imag;
+	background: #f00;
+	background-image: url('../../images/common-images/banner-image-ab.jpg');
+	background-size: cover;
+	/*height: 146px; width: 172px;
+	height: 100%; width: auto;*/
+
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+h1.banner, h2.banner {
+	margin: 0; border: 0;
+	padding: 0.1em;
+}
+
+/**************************************************************
+/* Debugging colours for mobile devices!
+/**************************************************************
+/*** Most phones and tablets      ****************************/
+/*** Width is for Galaxy Fold only !! ************************/
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		/* debug colours !!
+	.banner {background: cyan;} */
+}
+
+/**************************************************************
+/*** Anything bigger than 300px wide *************************/
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 299px) {
+		/* debug colours !!
+	.banner {background: magenta;} */
+}
+
+/**************************************************************
+/*** Anything bigger than 720px wide *************************/
+/*** iPad, iPhone X portrait *********************************/
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 720px) and (orientation: portrait){
+		/* debug colours !!
+	.banner {background: red;} */
+}
+
+/**************************************************************
+/*** Anything bigger than 1000px wide ************************/
+/*** iPad Pro ************************************************/
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1000px) {
+		/* debug colours !!
+	.banner {background: blue;} */
+}

@@ -8,6 +8,10 @@ but tidy up!! */
 @import './common-styles/theme-styles.css';
 @import './common-styles/typography.css';
 @import './index-styles/index-layout.css';
+@import './common-styles/common-banner.css';
+@import './common-styles/common-navbar.css';
+@import './index-styles/index-blogcards.css';
+
 @import './index-styles/index-images.css';
 @import './index-styles/responsive.css';
 @import './common-styles/devinfo.css';
