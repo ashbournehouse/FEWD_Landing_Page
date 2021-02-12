@@ -263,3 +263,49 @@ li.list-item-link-container {
 	margin: 1em;
 	padding: 0.15em 0 0 0;
 }
+
+/***********************************************
+/* Tooltip for home-button                    */
+.home-button .tooltiptext {
+	font-family: Avant Garde, Tahoma, Arial, Sans-Serif;
+	font-size: 0.8em;
+	font-weight: normal;
+  visibility: hidden;
+  width: 120px;
+  background-color: #663;
+  color: #ccc;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.home-button .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #663 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.home-button:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+/**********************************************/
+
